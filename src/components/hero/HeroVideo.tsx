@@ -1,16 +1,42 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PawPrint, ExternalLink, Heart, Camera } from 'lucide-react';
 
 const HeroVideo = () => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  
+  useEffect(() => {
+    // Try to force autoplay when component mounts
+    const attemptAutoplay = () => {
+      try {
+        if (iframeRef.current) {
+          // For YouTube iframe API - alternative approach
+          const src = iframeRef.current.src;
+          iframeRef.current.src = src;
+          
+          // Log for debugging
+          console.log('Attempting to autoplay video');
+        }
+      } catch (error) {
+        console.error('Error attempting to autoplay:', error);
+      }
+    };
+    
+    // Attempt autoplay after a short delay to ensure DOM is ready
+    const timer = setTimeout(attemptAutoplay, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="relative animate-on-scroll video-container" style={{ animationDelay: '0.3s' }}>
       {/* YouTube Video Embed */}
       <div className="relative glass-card rounded-2xl overflow-hidden shadow-lg w-full aspect-video max-w-lg mx-auto">
         <iframe 
+          ref={iframeRef}
           className="w-full h-full"
-          src="https://www.youtube.com/embed/ElAfvB0yLEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0"
+          src="https://www.youtube.com/embed/ElAfvB0yLEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1"
           title="Veterinary Care Assistant Demo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

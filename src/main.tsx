@@ -15,6 +15,23 @@ const isFacebookBrowser = () => {
 if (isFacebookBrowser()) {
   console.log('Facebook browser detected, applying specific optimizations');
   document.documentElement.classList.add('fb-browser');
+  
+  // Add specific handling for autoplay in Facebook browser
+  const unmuteVideos = () => {
+    const iframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+    iframes.forEach(iframe => {
+      let src = iframe.src;
+      if (src.indexOf('mute=1') > -1) {
+        src = src.replace('mute=1', 'mute=0');
+      } else if (src.indexOf('mute=') === -1) {
+        src += '&mute=0';
+      }
+      iframe.src = src;
+    });
+  };
+  
+  // Try to unmute videos on user interaction (required by most browsers)
+  document.addEventListener('click', unmuteVideos, { once: true });
 }
 
 // Safely get root element and render
