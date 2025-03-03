@@ -84,7 +84,7 @@ const Hero = () => {
                 <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs">KL</div>
                 <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xs">+</div>
               </div>
-              <span className="text-sm text-gray-600">Join thousands of pet owners using VetGPT</span>
+              <span className="text-sm text-white">Join thousands of pet owners using VetGPT</span>
             </div>
           </div>
           
