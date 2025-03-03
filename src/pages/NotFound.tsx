@@ -1,5 +1,8 @@
+
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { PawPrint } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,13 +15,23 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex items-center justify-center bg-background px-6">
+      <div className="text-center max-w-md animate-fade-in">
+        <div className="mb-8">
+          <PawPrint size={64} className="text-vetprimary mx-auto" />
+        </div>
+        <h1 className="text-5xl font-bold text-vetdark mb-4">404</h1>
+        <p className="text-xl text-gray-600 mb-8">
+          Oops! It seems this page has wandered off.
+        </p>
+        <Button 
+          asChild 
+          className="bg-vetprimary hover:bg-vetprimary/90 text-white px-8 py-6 text-lg btn-hover-effect"
+        >
+          <a href="/">
+            Return to Home
+          </a>
+        </Button>
       </div>
     </div>
   );
