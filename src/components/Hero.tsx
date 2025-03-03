@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink, ShieldCheck } from 'lucide-react';
+import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink, ShieldCheck, Clock, Users, Award } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -75,6 +75,33 @@ const Hero = () => {
               <p className="text-lg md:text-xl text-gray-600 max-w-lg">
                 Your AI-powered veterinary assistant providing expert pet health guidance, personalized care recommendations, and peace of mind for pet owners.
               </p>
+            </div>
+            
+            {/* Statistics Cards Section - Added as requested */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 animate-on-scroll" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-vetdark/70 p-4 rounded-xl border border-vetmuted/30 hover:shadow-glow hover:shadow-vetprimary/30 transition-all duration-300 hover:scale-105 cursor-default">
+                <div className="flex items-center mb-2">
+                  <Clock className="h-6 w-6 text-vetprimary mr-2 animate-pulse" />
+                  <h3 className="text-2xl font-bold text-white">24/7</h3>
+                </div>
+                <p className="text-sm text-gray-300">Always available whenever your pet needs help</p>
+              </div>
+              
+              <div className="bg-vetdark/70 p-4 rounded-xl border border-vetmuted/30 hover:shadow-glow hover:shadow-vetprimary/30 transition-all duration-300 hover:scale-105 cursor-default">
+                <div className="flex items-center mb-2">
+                  <Award className="h-6 w-6 text-vetprimary mr-2 animate-pulse" />
+                  <h3 className="text-2xl font-bold text-white">100+</h3>
+                </div>
+                <p className="text-sm text-gray-300">Species and breeds supported by our system</p>
+              </div>
+              
+              <div className="bg-vetdark/70 p-4 rounded-xl border border-vetmuted/30 hover:shadow-glow hover:shadow-vetprimary/30 transition-all duration-300 hover:scale-105 cursor-default">
+                <div className="flex items-center mb-2">
+                  <Users className="h-6 w-6 text-vetprimary mr-2 animate-pulse" />
+                  <h3 className="text-2xl font-bold text-white">10,000+</h3>
+                </div>
+                <p className="text-sm text-gray-300">Pet owners & active users</p>
+              </div>
             </div>
             
             {/* Rating and Active Users - Improved with independent badge styling */}
