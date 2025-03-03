@@ -66,7 +66,16 @@ const Footer = () => {
                   MORE AI TOOLS
                 </Button>
               </li>
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Breed Information</a></li>
+              <li>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  onClick={() => window.open('https://www.aidoctorgpt.com', '_blank')}
+                >
+                  AI DOCTOR GPT
+                </Button>
+              </li>
               <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Veterinary Articles</a></li>
               <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">FAQ</a></li>
             </ul>
