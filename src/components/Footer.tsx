@@ -8,11 +8,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <PawPrint size={24} className="text-vetprimary" />
-              <span className="text-xl font-semibold text-white">VetGPT</span>
-            </div>
-            <p className="text-gray-400 mb-4">
+            <a href="#" className="flex flex-col items-start hover-scale">
+              <div className="flex items-center space-x-2 mb-4">
+                <PawPrint size={24} className="text-vetprimary" />
+                <span className="text-xl font-semibold text-white">PetCareGPT</span>
+              </div>
+              <span className="text-xs text-gray-400 ml-9">Presented by AiWebTools.Ai</span>
+              <span className="text-xs text-gray-400 ml-9 flex items-center">
+                Made with <Heart size={12} className="mx-1 text-vetprimary animate-pulse" fill="#3B82F6" /> for better and free healthcare
+              </span>
+            </a>
+            <p className="text-gray-400 mb-4 mt-4">
               Advanced AI veterinary assistance for all your pet health needs.
             </p>
             <div className="flex space-x-4">
