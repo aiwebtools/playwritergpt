@@ -1,10 +1,37 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink } from 'lucide-react';
+import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink, Send } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [chatInput, setChatInput] = useState<string>('');
+  const [chatMessages, setChatMessages] = useState<Array<{text: string, isUser: boolean}>>([
+    { text: "Hello! I'm Veterinarian GPT. How can I help with your pet today?", isUser: false }
+  ]);
+  
+  const handleSendMessage = () => {
+    if (chatInput.trim() === '') return;
+    
+    // Add user message
+    setChatMessages(prev => [...prev, { text: chatInput, isUser: true }]);
+    
+    // Simulate AI response after a short delay
+    setTimeout(() => {
+      let response = "I'd be happy to help! Based on what you've described, this could be a case of seasonal allergies. Many pets experience similar symptoms during this time of year. I recommend gently cleaning your pet's paws after walks and consulting with your veterinarian about appropriate antihistamines for pets.";
+      setChatMessages(prev => [...prev, { text: response, isUser: false }]);
+    }, 1000);
+    
+    setChatInput('');
+  };
+  
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -75,6 +102,43 @@ const Hero = () => {
               <Button asChild variant="outline" className="border-vetprimary text-vetprimary hover:bg-vetlight rounded-lg px-8 py-6 text-lg">
                 <a href="https://aidoctorgpt.lovable.app/" target="_blank" rel="noopener noreferrer">Ai Doctor GPT</a>
               </Button>
+            </div>
+            
+            {/* Chat Interface */}
+            <div className="mt-4 glass-card rounded-xl overflow-hidden shadow-lg animate-on-scroll" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-vetprimary text-white p-3 flex items-center">
+                <PawPrint size={18} className="mr-2" />
+                <span className="font-medium">Veterinarian GPT</span>
+              </div>
+              <div className="h-52 overflow-y-auto p-4 bg-white/10">
+                {chatMessages.map((msg, index) => (
+                  <div key={index} className={`mb-3 ${msg.isUser ? 'text-right' : ''}`}>
+                    <div className={`inline-block p-3 rounded-lg max-w-[80%] ${
+                      msg.isUser 
+                        ? 'bg-vetprimary text-white rounded-tr-none' 
+                        : 'bg-gray-700/30 text-white rounded-tl-none'
+                    }`}>
+                      {msg.text}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-vetcard/80 p-3 flex gap-2">
+                <input
+                  type="text"
+                  value={chatInput}
+                  onChange={(e) => setChatInput(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Ask about your pet's health..."
+                  className="flex-1 bg-white/10 text-white border border-gray-600 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-vetprimary"
+                />
+                <Button 
+                  onClick={handleSendMessage}
+                  className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-4"
+                >
+                  <Send size={18} />
+                </Button>
+              </div>
             </div>
             
             <div className="flex items-center space-x-2 mt-8">
