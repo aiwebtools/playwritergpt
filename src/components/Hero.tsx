@@ -47,32 +47,34 @@ const Hero = () => {
               </p>
             </div>
             
-            {/* Rating and Active Users */}
-            <div className="flex items-center space-x-1 mb-2">
-              <div className="flex items-center mr-3">
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <div className="relative">
-                  <Star className="h-5 w-5 text-gray-300" />
-                  <div className="absolute inset-0 overflow-hidden" style={{
-                  width: '40%'
-                }}>
-                    <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+            {/* Rating and Active Users - Improved for readability */}
+            <div className="flex flex-wrap items-center gap-3 mb-2 bg-vetdark/50 p-3 rounded-lg shadow-sm">
+              <div className="flex items-center">
+                <div className="flex">
+                  <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  <div className="relative">
+                    <Star className="h-5 w-5 text-gray-300" />
+                    <div className="absolute inset-0 overflow-hidden" style={{
+                    width: '40%'
+                  }}>
+                      <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                    </div>
                   </div>
                 </div>
-                <span className="ml-2 text-gray-700 font-medium">4.4/5</span>
+                <span className="ml-2 text-white font-medium">4.4/5</span>
               </div>
-              <span className="text-gray-500">•</span>
-              <div className="flex items-center px-2 py-1 bg-vetlight/50 rounded-md">
-                <span className="text-vetprimary font-bold">10k+</span>
-                <span className="ml-1 text-gray-700 font-medium">active users</span>
+              <span className="text-gray-400">•</span>
+              <div className="flex items-center px-3 py-1 bg-vetprimary/20 rounded-md border border-vetprimary/30">
+                <span className="text-vetprimary font-bold text-base">10k+</span>
+                <span className="ml-1 text-white font-medium">active users</span>
               </div>
-              <span className="text-gray-500 mx-2">•</span>
-              <div className="flex items-center text-gray-700 font-medium">
+              <span className="text-gray-400">•</span>
+              <div className="flex items-center bg-vetprimary/20 px-3 py-1 rounded-md border border-vetprimary/30">
                 <ShieldCheck className="h-5 w-5 text-vetprimary mr-1" />
-                <span>Secure & Confidential</span>
+                <span className="text-white font-medium">Secure & Confidential</span>
               </div>
             </div>
             
