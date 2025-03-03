@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Heart, Camera, CircleHelp, FileText, Star } from 'lucide-react';
+import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -147,6 +147,19 @@ const Hero = () => {
             <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-vetsecondary/10 flex items-center justify-center animate-float" style={{ animationDelay: '1.5s' }}>
               <Camera className="h-8 w-8 text-vetsecondary" />
             </div>
+            
+            {/* Floating Try It Now Button */}
+            <a 
+              href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-lg animate-pulse hover:animate-none transition-all duration-300 hover:scale-110 z-20"
+              style={{ animationDuration: '3s' }}
+            >
+              <PawPrint className="h-6 w-6 mb-1" />
+              <span className="text-sm font-bold">TRY IT</span>
+              <span className="text-sm font-bold">NOW</span>
+            </a>
           </div>
         </div>
       </div>
