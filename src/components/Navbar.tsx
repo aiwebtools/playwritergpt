@@ -38,6 +38,7 @@ const Navbar = () => {
             <span className="text-xl font-semibold text-white">PetCareGPT</span>
           </div>
           <span className="text-xs text-gray-400 ml-9">Presented by AiWebTools.Ai</span>
+          <span className="text-xs text-gray-400 ml-9">Made with love for better and free healthcare</span>
         </a>
 
         {/* Desktop Navigation */}
