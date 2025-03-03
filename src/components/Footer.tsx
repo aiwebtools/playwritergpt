@@ -69,8 +69,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><a href="https://aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">About Us</a></li>
               <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Contact</a></li>
+              <li><a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Terms of Service</a></li>
+              <li><a href="tel:+14758008096" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Contact</a></li>
             </ul>
           </div>
           
