@@ -23,11 +23,22 @@ if (isFacebookBrowser()) {
       // Cast Element to HTMLIFrameElement to access src property
       const iframeElement = iframe as HTMLIFrameElement;
       let src = iframeElement.src;
+      
+      // Preserve HD settings while unmuting
+      if (src.indexOf('hd=1') === -1) {
+        src += '&hd=1';
+      }
+      
+      if (src.indexOf('vq=hd1080') === -1) {
+        src += '&vq=hd1080';
+      }
+      
       if (src.indexOf('mute=1') > -1) {
         src = src.replace('mute=1', 'mute=0');
       } else if (src.indexOf('mute=') === -1) {
         src += '&mute=0';
       }
+      
       iframeElement.src = src;
     });
   };

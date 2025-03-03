@@ -12,15 +12,33 @@ const HeroVideo = () => {
       try {
         if (iframeRef.current) {
           // For YouTube iframe API - alternative approach
-          const src = iframeRef.current.src;
-          iframeRef.current.src = src;
+          // Add the hd=1 parameter to force high definition and vq=hd1080 for 1080p
+          const currentSrc = iframeRef.current.src;
+          // Remove the iframe and re-add it to force the quality setting
+          const newSrc = ensureQualityParameters(currentSrc);
+          iframeRef.current.src = newSrc;
           
           // Log for debugging
-          console.log('Attempting to autoplay video');
+          console.log('Attempting to autoplay video with HD quality settings');
         }
       } catch (error) {
         console.error('Error attempting to autoplay:', error);
       }
+    };
+    
+    // Function to ensure quality parameters are in the URL
+    const ensureQualityParameters = (url: string) => {
+      // Make sure we have HD enabled
+      if (url.indexOf('hd=1') === -1) {
+        url = url.includes('?') ? `${url}&hd=1` : `${url}?hd=1`;
+      }
+      
+      // Add the vq parameter for 1080p
+      if (url.indexOf('vq=hd1080') === -1) {
+        url = `${url}&vq=hd1080`;
+      }
+      
+      return url;
     };
     
     // Attempt autoplay after a short delay to ensure DOM is ready
@@ -36,7 +54,7 @@ const HeroVideo = () => {
         <iframe 
           ref={iframeRef}
           className="w-full h-full"
-          src="https://www.youtube.com/embed/ElAfvB0yLEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1"
+          src="https://www.youtube.com/embed/ElAfvB0yLEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080"
           title="Veterinary Care Assistant Demo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
