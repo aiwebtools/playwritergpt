@@ -1,6 +1,25 @@
+
 import React from 'react';
-import { PawPrint, Heart, Mail, Phone, Instagram, TikTok } from 'lucide-react';
+import { PawPrint, Heart, Mail, Phone, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
+// Custom TikTok icon component
+const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    {...props}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const Footer = () => {
   const scrollToDisclaimer = () => {
@@ -49,7 +68,7 @@ const Footer = () => {
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="https://www.tiktok.com/@aiwebtools" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetprimary transition-colors">
-                <TikTok className="h-6 w-6" />
+                <TikTokIcon className="h-6 w-6" />
               </a>
             </div>
           </div>
