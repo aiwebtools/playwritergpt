@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink } from 'lucide-react';
@@ -37,9 +38,9 @@ const Hero = () => {
                 <PawPrint size={16} className="mr-2" />
                 <span>Virtual Veterinary Assistant</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-vetdark mb-4">
-                Veterinary Care, <br />
-                <span className="text-vetprimary">Anytime, Anywhere</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                <span className="bg-gradient-to-r from-vetaccent via-vetprimary to-vetsecondary text-transparent bg-clip-text animate-pulse">Veterinary Care,</span> <br />
+                <span className="bg-gradient-to-r from-vetaccent via-vetprimary to-vetsecondary text-transparent bg-clip-text animate-pulse">Anytime, Anywhere</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 max-w-lg">
                 Your AI-powered veterinary assistant providing expert pet health guidance, personalized care recommendations, and peace of mind for pet owners.
