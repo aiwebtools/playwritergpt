@@ -65,7 +65,10 @@ const Hero = () => {
                 <span className="ml-2 text-gray-700 font-medium">4.4/5</span>
               </div>
               <span className="text-gray-500">•</span>
-              <span className="text-gray-700 font-medium">10k+ active users</span>
+              <div className="flex items-center px-2 py-1 bg-vetlight/50 rounded-md">
+                <span className="text-vetprimary font-bold">10k+</span>
+                <span className="ml-1 text-gray-700 font-medium">active users</span>
+              </div>
               <span className="text-gray-500 mx-2">•</span>
               <div className="flex items-center text-gray-700 font-medium">
                 <ShieldCheck className="h-5 w-5 text-vetprimary mr-1" />
