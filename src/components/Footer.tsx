@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PawPrint, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -29,7 +28,14 @@ const Footer = () => {
                 <span className="text-xl font-semibold text-white">PetCareGPT</span>
               </div>
               <div className="ml-9">
-                <span className="text-xs text-gray-400 block">Presented by AiWebTools.Ai</span>
+                <a 
+                  href="https://aiwebtools.ai" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-gray-400 block hover:text-vetprimary transition-colors"
+                >
+                  Presented by AiWebTools.Ai
+                </a>
                 <span className="text-xs text-gray-400 flex items-center">
                   Made with <Heart size={12} className="mx-1 text-vetprimary animate-pulse" fill="#3B82F6" /> for better and free healthcare
                 </span>
