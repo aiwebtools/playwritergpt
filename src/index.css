@@ -52,7 +52,7 @@
   }
   
   .glass-card {
-    @apply bg-vetcard/80 backdrop-blur-sm border border-vetmuted/20 shadow-glass;
+    @apply bg-vetcard/80 backdrop-blur-sm border border-vetmuted/20 shadow-glass hover:shadow-glow hover:shadow-primary/30 transition-all duration-300;
   }
   
   .animate-on-scroll {
@@ -125,5 +125,71 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  
+  /* New Interactive Effects */
+  .magnetic-button {
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+  }
+  
+  .pulse-on-hover:hover {
+    animation: pulse-animation 1.5s infinite;
+  }
+  
+  @keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0 rgba(79, 107, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(79, 107, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(79, 107, 255, 0); }
+  }
+  
+  .neon-effect {
+    box-shadow: 0 0 5px #fff, 
+                0 0 10px #fff, 
+                0 0 15px #3B82F6, 
+                0 0 20px #3B82F6, 
+                0 0 25px #3B82F6;
+  }
+  
+  .floating-element {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .gradient-text-animated {
+    background: linear-gradient(270deg, #3B82F6, #8B5CF6, #10B981);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animation 3s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .btn-3d {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-3d:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+  
+  .btn-3d:active {
+    transform: translateY(2px) scale(0.95);
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
   }
 }
