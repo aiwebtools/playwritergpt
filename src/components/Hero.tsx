@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Heart, Camera, CircleHelp, FileText } from 'lucide-react';
+import { PawPrint, Heart, Camera, CircleHelp, FileText, Star } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -48,6 +48,25 @@ const Hero = () => {
               <p className="text-lg md:text-xl text-gray-600 max-w-lg">
                 Your AI-powered veterinary assistant providing expert pet health guidance, personalized care recommendations, and peace of mind for pet owners.
               </p>
+            </div>
+            
+            {/* Rating and Active Users */}
+            <div className="flex items-center space-x-1 mb-2">
+              <div className="flex items-center mr-3">
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <div className="relative">
+                  <Star className="h-5 w-5 text-gray-300" />
+                  <div className="absolute inset-0 overflow-hidden" style={{ width: '40%' }}>
+                    <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  </div>
+                </div>
+                <span className="ml-2 text-gray-700 font-medium">4.4/5</span>
+              </div>
+              <span className="text-gray-500">•</span>
+              <span className="text-gray-700 font-medium">10k+ active users</span>
             </div>
             
             <div className="flex flex-wrap gap-4">
