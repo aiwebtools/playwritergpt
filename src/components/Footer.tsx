@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PawPrint, Heart } from 'lucide-react';
+import { PawPrint, Heart, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -70,7 +70,19 @@ const Footer = () => {
               <li><a href="https://aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">About Us</a></li>
               <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Privacy Policy</a></li>
               <li><a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Terms of Service</a></li>
-              <li><a href="tel:+14758008096" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Contact</a></li>
+              <li>
+                <span className="text-gray-400 font-semibold">Contact:</span>
+                <div className="ml-2 mt-1 space-y-2">
+                  <a href="mailto:contact@ai-webtools.com" className="text-gray-400 hover:text-vetprimary hover-scale flex items-center gap-2">
+                    <Mail size={14} className="text-vetprimary" />
+                    contact@ai-webtools.com
+                  </a>
+                  <a href="tel:+14758008096" className="text-gray-400 hover:text-vetprimary hover-scale flex items-center gap-2">
+                    <Phone size={14} className="text-vetprimary" />
+                    (475) 800-8096
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
           
