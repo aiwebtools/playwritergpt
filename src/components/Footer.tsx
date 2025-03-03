@@ -1,5 +1,8 @@
+
 import React from 'react';
 import { PawPrint, Heart } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
 const Footer = () => {
   return <footer className="bg-vetdark border-t border-vetmuted py-12 px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
@@ -31,10 +34,6 @@ const Footer = () => {
             </div>
           </div>
           
-          
-          
-          
-          
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-3">
@@ -50,9 +49,19 @@ const Footer = () => {
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} VetGPT. All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm flex items-center mt-4 md:mt-0">
-            Made with <Heart className="h-4 w-4 text-red-500 mx-1 animate-pulse" /> for pets everywhere
-          </p>
+          <div className="flex items-center gap-4 mt-4 md:mt-0">
+            <p className="text-gray-500 text-sm flex items-center">
+              Made with <Heart className="h-4 w-4 text-red-500 mx-1 animate-pulse" /> for pets everywhere
+            </p>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+              onClick={() => window.open('https://aiwebtools.ai/terms-of-services', '_blank')}
+            >
+              Terms of Service
+            </Button>
+          </div>
         </div>
       </div>
     </footer>;
