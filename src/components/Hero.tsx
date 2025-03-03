@@ -88,53 +88,26 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Hero Visual */}
+          {/* Hero Visual - YouTube Video Integration */}
           <div className="relative animate-on-scroll" style={{
           animationDelay: '0.3s'
         }}>
-            <div className="relative glass-card rounded-2xl p-6 shadow-lg w-full max-w-lg mx-auto animate-float">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-10 h-10 rounded-full bg-vetprimary/10 flex items-center justify-center flex-shrink-0">
-                  <PawPrint className="h-5 w-5 text-vetprimary" />
-                </div>
-                <div className="flex-grow">
-                  <div className="bg-vetlight rounded-xl p-4 text-gray-700">
-                    <p className="font-medium">Hi I'm VetGPT! Do you have an animal you would like me to assess? I can analyze photos and provide care recommendations.</p>
-                  </div>
-                </div>
-              </div>
+            {/* YouTube Video Embed */}
+            <div className="relative glass-card rounded-2xl overflow-hidden shadow-lg w-full aspect-video max-w-lg mx-auto animate-float">
+              <iframe 
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/3TJP5a4ckRQ?autoplay=0&controls=1&rel=0&showinfo=0"
+                title="Veterinary Care Assistant Demo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
               
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                  <span className="text-sm text-gray-600">You</span>
+              {/* Video overlay with play button (optional) */}
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
+                  <div className="w-0 h-0 border-t-8 border-b-8 border-l-12 border-t-transparent border-b-transparent border-l-vetprimary ml-1"></div>
                 </div>
-                <div className="flex-grow">
-                  <div className="bg-white border border-gray-100 rounded-xl p-4 text-gray-700 shadow-subtle">
-                    <p>My dog has been scratching a lot and has red spots on his skin.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-vetprimary/10 flex items-center justify-center flex-shrink-0">
-                  <PawPrint className="h-5 w-5 text-vetprimary" />
-                </div>
-                <div className="flex-grow">
-                  <div className="bg-vetlight rounded-xl p-4 text-gray-700">
-                    <p className="font-medium">I understand your concern. This could be a sign of several conditions including allergies or skin irritation.</p>
-                    <p className="mt-2"><strong>Could you provide some more information about your dog? What breed, age, and weight is your dog?</strong></p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
-                <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse"></div>
-                <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse" style={{
-                animationDelay: '0.2s'
-              }}></div>
-                <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse" style={{
-                animationDelay: '0.4s'
-              }}></div>
               </div>
             </div>
             
