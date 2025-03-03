@@ -1,5 +1,5 @@
 import React from 'react';
-import { PawPrint, Heart, Mail, Phone, Instagram } from 'lucide-react';
+import { PawPrint, Heart, Mail, Phone, Instagram, TikTok } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -47,6 +47,9 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetprimary transition-colors">
                 <Instagram className="h-6 w-6" />
+              </a>
+              <a href="https://www.tiktok.com/@aiwebtools" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetprimary transition-colors">
+                <TikTok className="h-6 w-6" />
               </a>
             </div>
           </div>
