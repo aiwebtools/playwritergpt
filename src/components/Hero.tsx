@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink, ShieldCheck } from 'lucide-react';
@@ -47,9 +46,9 @@ const Hero = () => {
               </p>
             </div>
             
-            {/* Rating and Active Users - Improved for readability */}
-            <div className="flex flex-wrap items-center gap-3 mb-2 bg-vetdark/50 p-3 rounded-lg shadow-sm">
-              <div className="flex items-center">
+            {/* Rating and Active Users - Improved with independent badge styling */}
+            <div className="flex flex-wrap items-center gap-4 mb-2">
+              <div className="flex items-center bg-vetdark/70 px-3 py-1.5 rounded-full border border-vetmuted/30">
                 <div className="flex">
                   <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                   <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
@@ -66,14 +65,14 @@ const Hero = () => {
                 </div>
                 <span className="ml-2 text-white font-medium">4.4/5</span>
               </div>
-              <span className="text-gray-400">•</span>
-              <div className="flex items-center px-3 py-1 bg-vetprimary/20 rounded-md border border-vetprimary/30">
+              
+              <div className="flex items-center px-4 py-1.5 bg-vetprimary/20 rounded-full border border-vetprimary/30">
                 <span className="text-vetprimary font-bold text-base">10k+</span>
                 <span className="ml-1 text-white font-medium">active users</span>
               </div>
-              <span className="text-gray-400">•</span>
-              <div className="flex items-center bg-vetprimary/20 px-3 py-1 rounded-md border border-vetprimary/30">
-                <ShieldCheck className="h-5 w-5 text-vetprimary mr-1" />
+              
+              <div className="flex items-center bg-vetprimary/20 px-4 py-1.5 rounded-full border border-vetprimary/30">
+                <ShieldCheck className="h-5 w-5 text-vetprimary mr-1.5" />
                 <span className="text-white font-medium">Secure & Confidential</span>
               </div>
             </div>
