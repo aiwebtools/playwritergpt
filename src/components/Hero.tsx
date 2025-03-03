@@ -1,36 +1,30 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink } from 'lucide-react';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach((el) => observer.observe(el));
-
+    animatedElements.forEach(el => observer.observe(el));
     return () => {
-      animatedElements.forEach((el) => observer.unobserve(el));
+      animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <div className="min-h-screen pt-20 px-6 md:px-8 flex flex-col justify-center relative overflow-hidden" ref={heroRef}>
+  return <div className="min-h-screen pt-20 px-6 md:px-8 flex flex-col justify-center relative overflow-hidden" ref={heroRef}>
       {/* Background Elements */}
       <div className="absolute top-40 right-10 w-64 h-64 bg-blue-200/30 rounded-full filter blur-3xl z-0 animate-float"></div>
-      <div className="absolute bottom-40 left-10 w-72 h-72 bg-green-200/30 rounded-full filter blur-3xl z-0 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-40 left-10 w-72 h-72 bg-green-200/30 rounded-full filter blur-3xl z-0 animate-float" style={{
+      animationDelay: '2s'
+    }}></div>
       
       <div className="max-w-7xl mx-auto w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -59,7 +53,9 @@ const Hero = () => {
                 <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                 <div className="relative">
                   <Star className="h-5 w-5 text-gray-300" />
-                  <div className="absolute inset-0 overflow-hidden" style={{ width: '40%' }}>
+                  <div className="absolute inset-0 overflow-hidden" style={{
+                  width: '40%'
+                }}>
                     <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                   </div>
                 </div>
@@ -70,18 +66,11 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Button 
-                asChild 
-                className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg shadow-lg btn-hover-effect"
-              >
-                <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
+              <Button asChild className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg shadow-lg btn-hover-effect">
+                <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Veterinarian GPT</a>
               </Button>
-              <Button 
-                asChild 
-                variant="outline" 
-                className="border-vetprimary text-vetprimary hover:bg-vetlight rounded-lg px-8 py-6 text-lg"
-              >
-                <a href="#demo">See How It Works</a>
+              <Button asChild variant="outline" className="border-vetprimary text-vetprimary hover:bg-vetlight rounded-lg px-8 py-6 text-lg">
+                <a href="#demo">Ai Doctor GPT</a>
               </Button>
             </div>
             
@@ -97,7 +86,9 @@ const Hero = () => {
           </div>
           
           {/* Hero Visual */}
-          <div className="relative animate-on-scroll" style={{ animationDelay: '0.3s' }}>
+          <div className="relative animate-on-scroll" style={{
+          animationDelay: '0.3s'
+        }}>
             <div className="relative glass-card rounded-2xl p-6 shadow-lg w-full max-w-lg mx-auto animate-float">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-10 h-10 rounded-full bg-vetprimary/10 flex items-center justify-center flex-shrink-0">
@@ -135,27 +126,31 @@ const Hero = () => {
               
               <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
                 <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse"></div>
-                <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse" style={{
+                animationDelay: '0.2s'
+              }}></div>
+                <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse" style={{
+                animationDelay: '0.4s'
+              }}></div>
               </div>
             </div>
             
-            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
+            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center animate-float" style={{
+            animationDelay: '1s'
+          }}>
               <Heart className="h-10 w-10 text-vetaccent" />
             </div>
             
-            <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-vetsecondary/10 flex items-center justify-center animate-float" style={{ animationDelay: '1.5s' }}>
+            <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-vetsecondary/10 flex items-center justify-center animate-float" style={{
+            animationDelay: '1.5s'
+          }}>
               <Camera className="h-8 w-8 text-vetsecondary" />
             </div>
             
             {/* Floating Try It Now Button */}
-            <a 
-              href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-lg animate-pulse hover:animate-none transition-all duration-300 hover:scale-110 z-20"
-              style={{ animationDuration: '3s' }}
-            >
+            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer" className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-lg animate-pulse hover:animate-none transition-all duration-300 hover:scale-110 z-20" style={{
+            animationDuration: '3s'
+          }}>
               <PawPrint className="h-8 w-8 mb-2" />
               <span className="text-base font-bold">TRY IT</span>
               <span className="text-base font-bold">NOW</span>
@@ -163,8 +158,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
