@@ -96,7 +96,7 @@ const Hero = () => {
             <div className="relative glass-card rounded-2xl overflow-hidden shadow-lg w-full aspect-video max-w-lg mx-auto animate-float">
               <iframe 
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/3TJP5a4ckRQ?autoplay=0&controls=1&rel=0&showinfo=0"
+                src="https://www.youtube.com/embed/ElAfvB0yLEI?autoplay=0&controls=1&rel=0&showinfo=0"
                 title="Veterinary Care Assistant Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
