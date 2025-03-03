@@ -10,6 +10,13 @@ const Footer = () => {
     }
   };
 
+  const scrollToFaq = () => {
+    const faqElement = document.getElementById('faq');
+    if (faqElement) {
+      faqElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-vetdark border-t border-vetmuted py-12 px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
@@ -92,14 +99,23 @@ const Footer = () => {
                   DISCLAIMER
                 </Button>
               </li>
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">FAQ</a></li>
+              <li>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  onClick={scrollToFaq}
+                >
+                  FAQ
+                </Button>
+              </li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 mt-8 border-t border-vetmuted flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} PetCareGPT. All rights reserved.
+            �� {new Date().getFullYear()} PetCareGPT. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-4 md:mt-0 justify-center">
             <Button 
