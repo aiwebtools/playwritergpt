@@ -15,18 +15,18 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-6">
+    <div className="min-h-screen flex items-center justify-center bg-vetchardark px-6">
       <div className="text-center max-w-md animate-fade-in">
         <div className="mb-8">
-          <PawPrint size={64} className="text-vetprimary mx-auto" />
+          <PawPrint size={64} className="text-vetprimary mx-auto animate-float" />
         </div>
-        <h1 className="text-5xl font-bold text-vetdark mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-8">
+        <h1 className="text-5xl font-bold text-white mb-4">404</h1>
+        <p className="text-xl text-gray-300 mb-8">
           Oops! It seems this page has wandered off.
         </p>
         <Button 
           asChild 
-          className="bg-vetprimary hover:bg-vetprimary/90 text-white px-8 py-6 text-lg btn-hover-effect"
+          className="bg-vetprimary hover:bg-vethighlight text-white px-8 py-6 text-lg btn-hover-effect shadow-glow"
         >
           <a href="/">
             Return to Home

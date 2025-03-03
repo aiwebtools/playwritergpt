@@ -30,14 +30,18 @@ const Index = () => {
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
     
+    // Add dark scrollbar class to body
+    document.body.classList.add('dark-scrollbar');
+    
     // Clean up
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.body.classList.remove('dark-scrollbar');
     };
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-vetchardark">
       <Navbar />
       <main>
         <Hero />

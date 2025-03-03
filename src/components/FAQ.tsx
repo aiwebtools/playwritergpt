@@ -57,17 +57,17 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 px-6 md:px-8 bg-vetlight/30">
+    <section id="faq" className="py-24 px-6 md:px-8 bg-vetdark">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 animate-on-scroll">
-          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white text-vetprimary mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetmuted text-vetprimary mb-4">
             <PawPrint size={16} className="mr-2" />
             <span>Questions & Answers</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-vetdark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Get answers to common questions about VetGPT and how it can help your pets.
           </p>
         </div>
@@ -75,11 +75,15 @@ const FAQ = () => {
         <div className="animate-on-scroll">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-gray-100 mb-4 rounded-lg overflow-hidden bg-white">
-                <AccordionTrigger className="px-6 py-4 text-left font-medium text-lg text-vetdark hover:text-vetprimary">
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`} 
+                className="border border-vetmuted mb-4 rounded-lg overflow-hidden bg-vetcard interactive-card"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left font-medium text-lg text-white hover:text-vetprimary">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 py-4 text-gray-600">
+                <AccordionContent className="px-6 py-4 text-gray-300">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

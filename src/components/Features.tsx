@@ -22,14 +22,14 @@ interface FeatureCardProps {
 const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) => {
   return (
     <div 
-      className="glass-card rounded-xl p-6 transition-all duration-300 hover:shadow-lg animate-on-scroll"
+      className="glass-card rounded-xl p-6 transition-all duration-300 hover:shadow-glow interactive-card animate-on-scroll"
       style={{ animationDelay: `${delay}s` }}
     >
-      <div className="w-12 h-12 rounded-full bg-vetprimary/10 flex items-center justify-center mb-4">
+      <div className="w-12 h-12 rounded-full bg-vetprimary/20 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-vetdark mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+      <p className="text-gray-300">{description}</p>
     </div>
   );
 };
@@ -58,18 +58,18 @@ const Features = () => {
   return (
     <section id="features" className="py-24 px-6 md:px-8 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/3 left-0 w-full h-1/2 bg-vetlight/50 -skew-y-3 z-0"></div>
+      <div className="absolute top-1/3 left-0 w-full h-1/2 bg-vetprimary/5 -skew-y-3 z-0"></div>
       
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center mb-16 animate-on-scroll">
-          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetlight text-vetprimary mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetmuted text-vetprimary mb-4">
             <PawPrint size={16} className="mr-2" />
             <span>Comprehensive Pet Care</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-vetdark mb-4">
-            Advanced Features for <span className="text-vetprimary">Complete Pet Health</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Advanced Features for <span className="text-gradient">Complete Pet Health</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             VetGPT combines cutting-edge AI with veterinary expertise to provide the best possible care for your pets.
           </p>
         </div>

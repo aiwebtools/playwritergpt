@@ -7,32 +7,32 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 33% 10%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 224 20% 16%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 224 20% 16%;
+    --popover-foreground: 210 40% 98%;
 
     --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 160 84% 39%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 224 20% 25%;
+    --muted-foreground: 215 16% 70%;
 
     --accent: 262 61% 63%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 224 20% 20%;
+    --input: 224 20% 18%;
     --ring: 221 83% 53%;
 
     --radius: 0.75rem;
@@ -43,7 +43,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-vetchardark text-foreground font-sans;
     scroll-behavior: smooth;
   }
   
@@ -52,7 +52,7 @@
   }
   
   .glass-card {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-glass;
+    @apply bg-vetcard/80 backdrop-blur-sm border border-vetmuted/20 shadow-glass;
   }
   
   .animate-on-scroll {
@@ -91,5 +91,39 @@
   
   .btn-hover-effect:hover:after {
     left: 100%;
+  }
+  
+  .shimmer-effect {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background-size: 500px 100%;
+    animation: shimmer 2s linear infinite;
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .glow-on-hover:hover {
+    box-shadow: 0 0 15px rgba(79, 107, 255, 0.5);
+  }
+  
+  .interactive-card {
+    transition: all 0.3s ease;
+  }
+  
+  .interactive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }

@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -35,8 +36,38 @@
 
 .card {
   padding: 2em;
+  background-color: #222533;
+  border: 1px solid rgba(64, 70, 86, 0.2);
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.glow-effect {
+  box-shadow: 0 0 15px rgba(79, 107, 255, 0.5);
+}
+
+.dark-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: #1A1F2C;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: #404656;
+  border-radius: 5px;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4F6BFF;
 }
