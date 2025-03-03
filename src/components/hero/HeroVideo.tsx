@@ -23,7 +23,7 @@ const HeroVideo = () => {
         <Button asChild className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg font-bold shadow-lg btn-3d pulse-on-hover flex items-center gap-2">
           <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">
             <PawPrint className="h-6 w-6 animate-pulse" />
-            TRY IT Veterinarian GPT Now
+            TRY Veterinarian GPT Now
             <ExternalLink className="h-5 w-5 ml-1" />
           </a>
         </Button>
