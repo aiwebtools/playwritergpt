@@ -116,7 +116,16 @@ const Footer = () => {
         
         <div className="pt-8 mt-8 border-t border-vetmuted flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} AI WEB TOOLS LLC. All rights reserved.
+            © {new Date().getFullYear()} {" "}
+            <a 
+              href="https://aiwebtools.ai" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-vetprimary transition-colors"
+            >
+              AI WEB TOOLS LLC
+            </a>
+            . All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-4 md:mt-0 justify-center">
             <Button 
