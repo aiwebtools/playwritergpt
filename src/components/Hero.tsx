@@ -111,6 +111,17 @@ const Hero = () => {
               </div>
             </div>
             
+            {/* Added TRY IT NOW Button directly under the video */}
+            <div className="flex justify-center mt-4 animate-float" style={{ animationDelay: '1s' }}>
+              <Button asChild className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg font-bold shadow-lg btn-hover-effect flex items-center gap-2">
+                <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">
+                  <PawPrint className="h-6 w-6" />
+                  TRY IT Veterinarian GPT Now
+                  <ExternalLink className="h-5 w-5 ml-1" />
+                </a>
+              </Button>
+            </div>
+            
             <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center animate-float" style={{
             animationDelay: '1s'
           }}>
