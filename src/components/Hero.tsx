@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink } from 'lucide-react';
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -19,6 +20,7 @@ const Hero = () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
   return <div className="min-h-screen pt-20 px-6 md:px-8 flex flex-col justify-center relative overflow-hidden" ref={heroRef}>
       {/* Background Elements */}
       <div className="absolute top-40 right-10 w-64 h-64 bg-blue-200/30 rounded-full filter blur-3xl z-0 animate-float"></div>
@@ -70,7 +72,7 @@ const Hero = () => {
                 <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Veterinarian GPT</a>
               </Button>
               <Button asChild variant="outline" className="border-vetprimary text-vetprimary hover:bg-vetlight rounded-lg px-8 py-6 text-lg">
-                <a href="#demo">Ai Doctor GPT</a>
+                <a href="https://aidoctorgpt.lovable.app/" target="_blank" rel="noopener noreferrer">Ai Doctor GPT</a>
               </Button>
             </div>
             
@@ -160,4 +162,5 @@ const Hero = () => {
       </div>
     </div>;
 };
+
 export default Hero;
