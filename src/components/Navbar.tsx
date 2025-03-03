@@ -32,9 +32,12 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center space-x-2 hover-scale">
-          <PawPrint size={28} className="text-vetprimary" />
-          <span className="text-xl font-semibold text-white">VetGPT</span>
+        <a href="#" className="flex flex-col items-start hover-scale">
+          <div className="flex items-center space-x-2">
+            <PawPrint size={28} className="text-vetprimary" />
+            <span className="text-xl font-semibold text-white">PetCareGPT</span>
+          </div>
+          <span className="text-xs text-gray-400 ml-9">Presented by AiWebTools.Ai</span>
         </a>
 
         {/* Desktop Navigation */}
