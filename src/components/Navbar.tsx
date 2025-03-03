@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Menu, X } from 'lucide-react';
+import { PawPrint, Menu, X, Stethoscope } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,6 +42,16 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
+          <Button 
+            asChild 
+            variant="ghost" 
+            className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-2"
+          >
+            <a href="https://aidoctorgpt.lovable.app/" target="_blank" rel="noopener noreferrer">
+              <Stethoscope size={16} />
+              AI DOCTOR GPT
+            </a>
+          </Button>
           <a href="#features" className="text-gray-300 hover:text-vetprimary transition-colors">
             Features
           </a>
@@ -77,6 +87,16 @@ const Navbar = () => {
         )}
       >
         <div className="flex flex-col space-y-4 px-6">
+          <a 
+            href="https://aidoctorgpt.lovable.app/" 
+            className="text-gray-300 py-2 border-b border-vetmuted flex items-center gap-2"
+            onClick={() => setMobileMenuOpen(false)}
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Stethoscope size={16} />
+            AI DOCTOR GPT
+          </a>
           <a 
             href="#features" 
             className="text-gray-300 py-2 border-b border-vetmuted"
