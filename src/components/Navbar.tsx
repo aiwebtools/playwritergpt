@@ -58,41 +58,48 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <Button 
-            asChild 
-            variant="ghost" 
-            className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-2"
-          >
-            <a href="https://aidoctorgpt.lovable.app/" target="_blank" rel="noopener noreferrer">
-              <Stethoscope size={16} />
-              AI DOCTOR GPT
+        <div className="hidden md:flex items-center space-x-5">
+          <div className="flex items-center space-x-4 mr-2">
+            <a href="#features" className="text-gray-300 hover:text-vetprimary transition-colors text-sm">
+              Features
             </a>
-          </Button>
-          <a href="#features" className="text-gray-300 hover:text-vetprimary transition-colors">
-            Features
-          </a>
-          <a href="#demo" className="text-gray-300 hover:text-vetprimary transition-colors">
-            How It Works
-          </a>
-          <a href="#faq" className="text-gray-300 hover:text-vetprimary transition-colors">
-            FAQ
-          </a>
-          <Button 
-            variant="ghost"
-            className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-1 text-xs"
-            onClick={scrollToDisclaimer}
-          >
-            <AlertTriangle size={14} />
-            Disclaimer
-          </Button>
-          <Button 
-            asChild 
-            variant="default"
-            className="bg-vetprimary hover:bg-vethighlight text-white btn-hover-effect glow-on-hover"
-          >
-            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
-          </Button>
+            <a href="#demo" className="text-gray-300 hover:text-vetprimary transition-colors text-sm">
+              How It Works
+            </a>
+            <a href="#faq" className="text-gray-300 hover:text-vetprimary transition-colors text-sm">
+              FAQ
+            </a>
+            <Button 
+              variant="ghost"
+              className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-1 text-xs p-0"
+              onClick={scrollToDisclaimer}
+            >
+              <AlertTriangle size={12} />
+              <span className="ml-1">Disclaimer</span>
+            </Button>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <Button 
+              asChild 
+              variant="ghost" 
+              className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-1 text-xs py-1 px-2"
+            >
+              <a href="https://aidoctorgpt.lovable.app/" target="_blank" rel="noopener noreferrer">
+                <Stethoscope size={14} />
+                <span className="ml-1">AI DOCTOR GPT</span>
+              </a>
+            </Button>
+            
+            <Button 
+              asChild 
+              variant="default"
+              size="sm"
+              className="bg-vetprimary hover:bg-vethighlight text-white btn-hover-effect glow-on-hover"
+            >
+              <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
