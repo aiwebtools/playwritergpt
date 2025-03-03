@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink } from 'lucide-react';
+import { PawPrint, Heart, Camera, CircleHelp, FileText, Star, ExternalLink, ShieldCheck } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -66,6 +66,11 @@ const Hero = () => {
               </div>
               <span className="text-gray-500">•</span>
               <span className="text-gray-700 font-medium">10k+ active users</span>
+              <span className="text-gray-500 mx-2">•</span>
+              <div className="flex items-center text-gray-700 font-medium">
+                <ShieldCheck className="h-5 w-5 text-vetprimary mr-1" />
+                <span>Secure & Confidential</span>
+              </div>
             </div>
             
             <div className="flex flex-wrap gap-4">
