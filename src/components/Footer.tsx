@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { PawPrint, Heart } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-vetdark border-t border-vetmuted py-12 px-6 md:px-8">
+  return <footer className="bg-vetdark border-t border-vetmuted py-12 px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-1">
@@ -34,25 +31,9 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Features</h3>
-            <ul className="space-y-3">
-              <li><a href="#features" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Image Analysis</a></li>
-              <li><a href="#features" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Health Monitoring</a></li>
-              <li><a href="#features" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Expert Consultations</a></li>
-              <li><a href="#features" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Detailed Reports</a></li>
-            </ul>
-          </div>
           
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Pet Care Guides</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Symptom Checker</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Breed Information</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Emergency First Aid</a></li>
-            </ul>
-          </div>
+          
+          
           
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h3>
@@ -74,8 +55,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
