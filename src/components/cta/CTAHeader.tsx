@@ -14,7 +14,7 @@ const CTAHeader = () => {
         Give Your Pet the <span className="text-gradient">Expert Care</span> They Deserve
       </h2>
       
-      <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
+      <p className="text-xl text-white max-w-2xl mx-auto mb-8">
         Join thousands of pet owners who trust VetGPT for reliable, compassionate guidance on their pets' health and wellbeing.
       </p>
     </>
