@@ -56,7 +56,16 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Pet Care Tips</a></li>
+              <li>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  onClick={() => window.open('https://www.aiwebtools.ai', '_blank')}
+                >
+                  MORE AI TOOLS
+                </Button>
+              </li>
               <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Breed Information</a></li>
               <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Veterinary Articles</a></li>
               <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">FAQ</a></li>
