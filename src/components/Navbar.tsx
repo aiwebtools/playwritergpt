@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Menu, X, Stethoscope, Heart } from 'lucide-react';
+import { PawPrint, Menu, X, Stethoscope, Heart, AlertTriangle } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +20,13 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const scrollToDisclaimer = () => {
+    const disclaimerElement = document.getElementById('disclaimer');
+    if (disclaimerElement) {
+      disclaimerElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -71,6 +78,14 @@ const Navbar = () => {
           <a href="#faq" className="text-gray-300 hover:text-vetprimary transition-colors">
             FAQ
           </a>
+          <Button 
+            variant="ghost"
+            className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-1 text-xs"
+            onClick={scrollToDisclaimer}
+          >
+            <AlertTriangle size={14} />
+            Disclaimer
+          </Button>
           <Button 
             asChild 
             variant="default"
@@ -127,6 +142,17 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
           >
             FAQ
+          </a>
+          <a 
+            href="#disclaimer" 
+            className="text-gray-300 py-2 border-b border-vetmuted flex items-center gap-2"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              scrollToDisclaimer();
+            }}
+          >
+            <AlertTriangle size={14} />
+            Disclaimer
           </a>
           <Button 
             asChild 

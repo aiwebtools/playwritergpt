@@ -49,6 +49,22 @@ const Index = () => {
         <Demo />
         <FAQ />
         <CTA />
+        <div id="disclaimer" className="py-16 px-6 bg-vetdark">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-white mb-6">Disclaimer</h2>
+            <div className="bg-vetmuted/20 p-6 rounded-lg border border-vetmuted/40">
+              <p className="text-gray-300 mb-4">
+                PetCareGPT is an AI tool designed to provide general information about pet health. It is not a substitute for professional veterinary advice, diagnosis, or treatment.
+              </p>
+              <p className="text-gray-300 mb-4">
+                Always seek the advice of your veterinarian with any questions you may have regarding your pet's medical condition. Never disregard professional veterinary advice or delay in seeking it because of something you have read on this website.
+              </p>
+              <p className="text-gray-300">
+                In case of emergency, contact your local veterinary emergency services immediately.
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
