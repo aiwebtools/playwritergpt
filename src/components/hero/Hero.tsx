@@ -9,14 +9,19 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
+    // Use a more reliable way to check if elements are in the viewport
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          // Add visible class with a slight delay to ensure DOM is ready
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 10);
         }
       });
     }, {
-      threshold: 0.1
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px' // Trigger slightly before element enters viewport
     });
     
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -27,26 +32,33 @@ const Hero = () => {
     };
   }, []);
 
-  // Mouse follow effect for the floating button
+  // Simplified mouse follow effect with better cross-browser compatibility
   useEffect(() => {
     const floatingBtn = document.querySelector('.floating-btn');
     if (!floatingBtn) return;
     
     const handleMouseMove = (e: MouseEvent) => {
-      const videoContainer = document.querySelector('.video-container');
-      if (!videoContainer) return;
-      
-      const rect = videoContainer.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      
-      const moveX = (e.clientX - centerX) / 20;
-      const moveY = (e.clientY - centerY) / 20;
-      
-      floatingBtn.setAttribute('style', `transform: translate(${moveX}px, ${moveY}px) scale(1.1);`);
+      try {
+        const videoContainer = document.querySelector('.video-container');
+        if (!videoContainer) return;
+        
+        const rect = videoContainer.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        // Use a more conservative movement amount for better compatibility
+        const moveX = (e.clientX - centerX) / 30;
+        const moveY = (e.clientY - centerY) / 30;
+        
+        // Apply transform in a more compatible way
+        floatingBtn.setAttribute('style', `transform: translate(${moveX}px, ${moveY}px);`);
+      } catch (error) {
+        console.log("Error in mouse move effect:", error);
+      }
     };
     
-    document.addEventListener('mousemove', handleMouseMove);
+    // Use passive event listener for better performance
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
     
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
