@@ -17,7 +17,7 @@ const HeroContent = () => {
           <span className="gradient-text-animated">Veterinary Care,</span> <br />
           <span className="gradient-text-animated" style={{ animationDelay: '1s' }}>Anytime, Anywhere</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-lg">
+        <p className="text-lg md:text-xl text-white font-medium max-w-lg">
           Your AI-powered veterinary assistant providing expert pet health guidance, personalized care recommendations, and peace of mind for pet owners.
         </p>
       </div>
