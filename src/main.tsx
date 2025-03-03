@@ -20,13 +20,15 @@ if (isFacebookBrowser()) {
   const unmuteVideos = () => {
     const iframes = document.querySelectorAll('iframe[src*="youtube.com"]');
     iframes.forEach(iframe => {
-      let src = iframe.src;
+      // Cast Element to HTMLIFrameElement to access src property
+      const iframeElement = iframe as HTMLIFrameElement;
+      let src = iframeElement.src;
       if (src.indexOf('mute=1') > -1) {
         src = src.replace('mute=1', 'mute=0');
       } else if (src.indexOf('mute=') === -1) {
         src += '&mute=0';
       }
-      iframe.src = src;
+      iframeElement.src = src;
     });
   };
   
