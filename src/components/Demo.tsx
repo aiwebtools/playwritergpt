@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { PawPrint, Upload, MessageSquare, FileText, ArrowRight } from 'lucide-react';
 
@@ -138,7 +137,7 @@ const Demo = () => {
               </div>
               
               <div className="mt-6">
-                <a href="#start" className="inline-flex items-center text-vetprimary hover:text-vetprimary/80 font-medium">
+                <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-vetprimary hover:text-vetprimary/80 font-medium">
                   Try for yourself <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </div>

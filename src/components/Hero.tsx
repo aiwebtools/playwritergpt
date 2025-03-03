@@ -55,7 +55,7 @@ const Hero = () => {
                 asChild 
                 className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg shadow-lg btn-hover-effect"
               >
-                <a href="#start">Get Started</a>
+                <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
               </Button>
               <Button 
                 asChild 

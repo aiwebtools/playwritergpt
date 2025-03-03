@@ -56,7 +56,7 @@ const Navbar = () => {
             variant="default"
             className="bg-vetprimary hover:bg-vethighlight text-white btn-hover-effect glow-on-hover"
           >
-            <a href="#start">Get Started</a>
+            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
           </Button>
         </div>
 
@@ -104,7 +104,7 @@ const Navbar = () => {
             className="mt-2 bg-vetprimary hover:bg-vethighlight text-white w-full"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <a href="#start">Get Started</a>
+            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
           </Button>
         </div>
       </div>
