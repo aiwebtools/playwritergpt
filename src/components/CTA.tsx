@@ -66,8 +66,8 @@ const CTA = () => {
           </div>
           
           <div className="bg-vetcard rounded-xl p-6 shadow-glass border border-vetmuted/30 text-center animate-on-scroll interactive-card" style={{ animationDelay: '0.2s' }}>
-            <div className="text-2xl font-bold text-vetprimary mb-2">100+</div>
-            <p className="text-gray-300">Species and breeds supported by our system</p>
+            <div className="text-2xl font-bold text-vetprimary mb-2">1,000+</div>
+            <p className="text-gray-300">Species and Breeds Supported in Our System</p>
           </div>
           
           <div className="bg-vetcard rounded-xl p-6 shadow-glass border border-vetmuted/30 text-center animate-on-scroll interactive-card" style={{ animationDelay: '0.3s' }}>
