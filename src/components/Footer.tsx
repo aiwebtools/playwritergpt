@@ -4,21 +4,24 @@ import { PawPrint, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
-  return <footer className="bg-vetdark border-t border-vetmuted py-12 px-6 md:px-8">
+  return (
+    <footer className="bg-vetdark border-t border-vetmuted py-12 px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-1">
-            <a href="#" className="flex flex-col items-start hover-scale">
-              <div className="flex items-center space-x-2 mb-4">
+          <div className="md:col-span-2">
+            <a href="#" className="flex flex-col items-start hover-scale mb-4">
+              <div className="flex items-center space-x-2 mb-2">
                 <PawPrint size={24} className="text-vetprimary" />
                 <span className="text-xl font-semibold text-white">PetCareGPT</span>
               </div>
-              <span className="text-xs text-gray-400 ml-9">Presented by AiWebTools.Ai</span>
-              <span className="text-xs text-gray-400 ml-9 flex items-center">
-                Made with <Heart size={12} className="mx-1 text-vetprimary animate-pulse" fill="#3B82F6" /> for better and free healthcare
-              </span>
+              <div className="ml-9">
+                <span className="text-xs text-gray-400 block">Presented by AiWebTools.Ai</span>
+                <span className="text-xs text-gray-400 flex items-center">
+                  Made with <Heart size={12} className="mx-1 text-vetprimary animate-pulse" fill="#3B82F6" /> for better and free healthcare
+                </span>
+              </div>
             </a>
-            <p className="text-gray-400 mb-4 mt-4">
+            <p className="text-gray-400 mb-4">
               Advanced AI veterinary assistance for all your pet health needs.
             </p>
             <div className="flex space-x-4">
@@ -49,16 +52,23 @@ const Footer = () => {
               <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Contact</a></li>
             </ul>
           </div>
+          
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Pet Care Tips</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Breed Information</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Veterinary Articles</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">FAQ</a></li>
+            </ul>
+          </div>
         </div>
         
         <div className="pt-8 mt-8 border-t border-vetmuted flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} VetGPT. All rights reserved.
+            © {new Date().getFullYear()} PetCareGPT. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <p className="text-gray-500 text-sm flex items-center">
-              Made with <Heart className="h-4 w-4 text-red-500 mx-1 animate-pulse" /> for pets everywhere
-            </p>
+          <div className="flex flex-wrap items-center gap-4 mt-4 md:mt-0 justify-center">
             <Button 
               variant="outline" 
               size="sm" 
@@ -70,6 +80,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
