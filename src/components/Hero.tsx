@@ -131,12 +131,12 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Hero Visual - YouTube Video Integration */}
+          {/* Hero Visual - YouTube Video Integration - Removed interactivity */}
           <div className="relative animate-on-scroll video-container" style={{
           animationDelay: '0.3s'
         }}>
-            {/* YouTube Video Embed */}
-            <div className="relative glass-card rounded-2xl overflow-hidden shadow-lg w-full aspect-video max-w-lg mx-auto animate-float hover:scale-[1.02] transition-all duration-300">
+            {/* YouTube Video Embed - Removed hover animations and floating effects */}
+            <div className="relative glass-card rounded-2xl overflow-hidden shadow-lg w-full aspect-video max-w-lg mx-auto">
               <iframe 
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/ElAfvB0yLEI?autoplay=0&controls=1&rel=0&showinfo=0"
@@ -145,17 +145,10 @@ const Hero = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              
-              {/* Video overlay with play button (optional) */}
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
-                  <div className="w-0 h-0 border-t-8 border-b-8 border-l-12 border-t-transparent border-b-transparent border-l-vetprimary ml-1"></div>
-                </div>
-              </div>
             </div>
             
-            {/* Added TRY IT NOW Button directly under the video */}
-            <div className="flex justify-center mt-4 animate-float" style={{ animationDelay: '1s' }}>
+            {/* Added TRY IT NOW Button directly under the video - Kept button but removed animation */}
+            <div className="flex justify-center mt-4">
               <Button asChild className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg font-bold shadow-lg btn-3d pulse-on-hover flex items-center gap-2">
                 <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">
                   <PawPrint className="h-6 w-6 animate-pulse" />
@@ -165,20 +158,16 @@ const Hero = () => {
               </Button>
             </div>
             
-            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center animate-float" style={{
-            animationDelay: '1s'
-          }}>
+            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center">
               <Heart className="h-10 w-10 text-vetaccent animate-pulse" />
             </div>
             
-            <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-vetsecondary/10 flex items-center justify-center animate-float" style={{
-            animationDelay: '1.5s'
-          }}>
+            <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-vetsecondary/10 flex items-center justify-center">
               <Camera className="h-8 w-8 text-vetsecondary" />
             </div>
             
-            {/* Floating Try It Now Button with magnetic effect */}
-            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer" className="floating-btn absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-lg hover:shadow-glow hover:shadow-vetprimary/50 transition-all duration-300 hover:scale-110 z-20 neon-effect">
+            {/* Floating Try It Now Button - Kept but made static */}
+            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer" className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-lg hover:shadow-glow hover:shadow-vetprimary/50 transition-all duration-300 hover:scale-110 z-20 neon-effect">
               <PawPrint className="h-8 w-8 mb-2 animate-bounce" />
               <span className="text-base font-bold">TRY IT</span>
               <span className="text-base font-bold">NOW</span>
