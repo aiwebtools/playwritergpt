@@ -153,12 +153,12 @@ const Hero = () => {
               href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-lg animate-pulse hover:animate-none transition-all duration-300 hover:scale-110 z-20"
+              className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-lg animate-pulse hover:animate-none transition-all duration-300 hover:scale-110 z-20"
               style={{ animationDuration: '3s' }}
             >
-              <PawPrint className="h-6 w-6 mb-1" />
-              <span className="text-sm font-bold">TRY IT</span>
-              <span className="text-sm font-bold">NOW</span>
+              <PawPrint className="h-8 w-8 mb-2" />
+              <span className="text-base font-bold">TRY IT</span>
+              <span className="text-base font-bold">NOW</span>
             </a>
           </div>
         </div>
