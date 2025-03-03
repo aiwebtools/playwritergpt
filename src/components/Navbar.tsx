@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Menu, X, Stethoscope } from 'lucide-react';
+import { PawPrint, Menu, X, Stethoscope, Heart } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,7 +38,9 @@ const Navbar = () => {
             <span className="text-xl font-semibold text-white">PetCareGPT</span>
           </div>
           <span className="text-xs text-gray-400 ml-9">Presented by AiWebTools.Ai</span>
-          <span className="text-xs text-gray-400 ml-9">Made with love for better and free healthcare</span>
+          <span className="text-xs text-gray-400 ml-9 flex items-center">
+            Made with <Heart size={12} className="mx-1 text-vetprimary animate-pulse" fill="#3B82F6" /> for better and free healthcare
+          </span>
         </a>
 
         {/* Desktop Navigation */}
