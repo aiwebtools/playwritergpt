@@ -54,8 +54,8 @@ const HeroVideo = () => {
         <iframe 
           ref={iframeRef}
           className="w-full h-full"
-          src="https://www.youtube.com/embed/ElAfvB0yLEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080"
-          title="Veterinary Care Assistant Demo"
+          src="https://www.youtube.com/embed/KKldzg40wEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080"
+          title="Playwriter GPT Demo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
