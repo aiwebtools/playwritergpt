@@ -42,12 +42,14 @@
     @apply border-border;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     scroll-behavior: smooth;
     height: 100%;
     width: 100%;
+    overscroll-behavior-y: none;
   }
 
   body {
@@ -57,6 +59,7 @@
     width: 100%;
     position: relative;
     overscroll-behavior: none;
+    touch-action: manipulation;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -79,49 +82,58 @@
     transform: translateY(0);
   }
   
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
+  /* Mobile-optimized transitions */
+  @media (max-width: 768px) {
+    .transition-all {
+      transition-duration: 200ms;
+    }
+    
+    .animate-on-scroll {
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
   }
   
-  /* Updated with more compatible CSS */
+  /* More efficient button hover effects for mobile */
   .btn-hover-effect {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
   }
   
-  .btn-hover-effect:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: all 0.6s ease;
+  @media (hover: hover) {
+    .btn-hover-effect:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: all 0.6s ease;
+    }
+    
+    .btn-hover-effect:hover:after {
+      left: 100%;
+    }
   }
   
-  .btn-hover-effect:hover:after {
-    left: 100%;
-  }
-  
-  /* More simplified animations for better cross-browser compatibility */
+  /* Optimized animations for better performance */
   .shimmer-effect {
     position: relative;
     overflow: hidden;
   }
   
-  .shimmer-effect::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    animation: shimmer 2s linear infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    .shimmer-effect::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shimmer 2s linear infinite;
+    }
   }
   
   .hover-scale {
@@ -153,13 +165,15 @@
     color: transparent;
   }
   
-  /* Simplified interactive effects for better compatibility */
+  /* Touch-optimized interactive effects */
   .magnetic-button {
     transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
   }
   
-  .pulse-on-hover:hover {
-    animation: pulse-animation 1.5s infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    .pulse-on-hover:hover {
+      animation: pulse-animation 1.5s infinite;
+    }
   }
   
   @keyframes pulse-animation {
@@ -168,16 +182,27 @@
     100% { box-shadow: 0 0 0 0 rgba(79, 107, 255, 0); }
   }
   
-  .neon-effect {
-    box-shadow: 0 0 5px #fff, 
-                0 0 10px #fff, 
-                0 0 15px #3B82F6, 
-                0 0 20px #3B82F6, 
-                0 0 25px #3B82F6;
+  /* Reduced animation complexity for mobile */
+  @media (max-width: 768px) {
+    .neon-effect {
+      box-shadow: 0 0 5px #3B82F6;
+    }
   }
   
-  .floating-element {
-    animation: floating 3s ease-in-out infinite;
+  @media (min-width: 769px) {
+    .neon-effect {
+      box-shadow: 0 0 5px #fff, 
+                  0 0 10px #fff, 
+                  0 0 15px #3B82F6, 
+                  0 0 20px #3B82F6, 
+                  0 0 25px #3B82F6;
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .floating-element {
+      animation: floating 3s ease-in-out infinite;
+    }
   }
   
   @keyframes floating {
@@ -186,14 +211,16 @@
     100% { transform: translateY(0px); }
   }
   
-  .gradient-text-animated {
-    background: linear-gradient(270deg, #3B82F6, #8B5CF6, #10B981);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    animation: gradient-animation 3s ease infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    .gradient-text-animated {
+      background: linear-gradient(270deg, #3B82F6, #8B5CF6, #10B981);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      animation: gradient-animation 3s ease infinite;
+    }
   }
   
   @keyframes gradient-animation {
@@ -218,5 +245,13 @@
   @keyframes shimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
+  }
+  
+  /* Add touch-friendly active states for mobile */
+  @media (max-width: 768px) {
+    .touch-active:active {
+      opacity: 0.8;
+      transform: scale(0.98);
+    }
   }
 }

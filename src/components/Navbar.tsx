@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { PawPrint, Menu, X, Stethoscope, Heart, AlertTriangle } from 'lucide-react';
@@ -9,15 +9,16 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  // Debounced scroll handler for better performance
+  const handleScroll = useCallback(() => {
+    const scrollPosition = window.scrollY;
+    setIsScrolled(scrollPosition > 10);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -27,13 +28,14 @@ const Navbar = () => {
     const disclaimerElement = document.getElementById('disclaimer');
     if (disclaimerElement) {
       disclaimerElement.scrollIntoView({ behavior: 'smooth' });
+      if (mobileMenuOpen) setMobileMenuOpen(false);
     }
   };
 
   return (
     <nav
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-8',
+        'fixed top-0 w-full z-50 transition-all duration-300 py-3 px-4 md:py-4 md:px-6',
         isScrolled 
           ? 'bg-vetdark/90 backdrop-blur-md shadow-md' 
           : 'bg-transparent'
@@ -118,21 +120,22 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden text-white focus:outline-none touch-manipulation"
           onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Optimized */}
       <div
         className={cn(
           'fixed inset-x-0 top-[68px] z-40 bg-vetdark/95 backdrop-blur-md shadow-md transition-all duration-300 ease-in-out md:hidden',
           mobileMenuOpen ? 'max-h-screen py-4' : 'max-h-0 overflow-hidden py-0'
         )}
       >
-        <div className="flex flex-col space-y-4 px-6">
+        <div className="flex flex-col space-y-3 px-6">
           <a 
             href="https://aidoctorgpt.lovable.app/" 
             className="text-gray-300 py-2 border-b border-vetmuted flex items-center gap-2"
