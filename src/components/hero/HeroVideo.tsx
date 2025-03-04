@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Theater, ExternalLink, Heart, Camera } from 'lucide-react';
@@ -7,16 +6,12 @@ const HeroVideo = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   
   useEffect(() => {
-    // Enhanced autoplay handling
     const attemptAutoplay = () => {
       try {
         if (iframeRef.current) {
-          // Add autoplay parameters and ensure HD quality
           const currentSrc = iframeRef.current.src;
-          // Force autoplay with enhanced parameters
           const newSrc = ensureParameters(currentSrc);
           iframeRef.current.src = newSrc;
-          
           console.log('Attempting to autoplay video with enhanced settings');
         }
       } catch (error) {
@@ -24,34 +19,28 @@ const HeroVideo = () => {
       }
     };
     
-    // Improved function to ensure all required parameters are in the URL
     const ensureParameters = (url: string) => {
-      // Parse URL to manipulate parameters more reliably
       const urlObj = new URL(url);
       const params = new URLSearchParams(urlObj.search);
       
-      // Set all required parameters
       params.set('autoplay', '1');
-      params.set('mute', '1'); // Start muted to ensure autoplay
+      params.set('mute', '0');
       params.set('controls', '1');
       params.set('rel', '0');
       params.set('showinfo', '0');
       params.set('enablejsapi', '1');
       params.set('hd', '1');
       params.set('vq', 'hd1080');
-      params.set('playlist', 'KKldzg40wEI'); // Loop the video by setting playlist to same ID
+      params.set('playlist', 'KKldzg40wEI');
       params.set('loop', '1');
       
-      // Replace search params and return the full URL
       urlObj.search = params.toString();
       return urlObj.toString();
     };
     
-    // Try autoplay on load and after a delay to ensure DOM is ready
     attemptAutoplay();
     const timer = setTimeout(attemptAutoplay, 1000);
     
-    // Handle visibility changes to restart video when tab becomes visible again
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible' && iframeRef.current) {
         attemptAutoplay();
@@ -68,12 +57,11 @@ const HeroVideo = () => {
 
   return (
     <div className="relative animate-on-scroll video-container" style={{ animationDelay: '0.3s' }}>
-      {/* YouTube Video Embed with enhanced autoplay capabilities */}
       <div className="relative glass-card rounded-2xl overflow-hidden shadow-lg w-full aspect-video max-w-lg mx-auto">
         <iframe 
           ref={iframeRef}
           className="w-full h-full"
-          src="https://www.youtube.com/embed/KKldzg40wEI?autoplay=1&mute=1&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080&playlist=KKldzg40wEI&loop=1"
+          src="https://www.youtube.com/embed/KKldzg40wEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080&playlist=KKldzg40wEI&loop=1"
           title="Playwriter GPT Demo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -81,7 +69,6 @@ const HeroVideo = () => {
         ></iframe>
       </div>
       
-      {/* TRY IT NOW Button under video */}
       <div className="flex justify-center mt-4">
         <Button asChild className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg font-bold shadow-lg btn-3d pulse-on-hover flex items-center gap-2">
           <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer">
@@ -100,7 +87,6 @@ const HeroVideo = () => {
         <Camera className="h-8 w-8 text-vetsecondary" />
       </div>
       
-      {/* Floating Try It Now Button */}
       <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer" className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-lg hover:shadow-glow hover:shadow-vetprimary/50 transition-all duration-300 hover:scale-110 z-20 neon-effect">
         <Theater className="h-8 w-8 mb-2 animate-bounce" />
         <span className="text-base font-bold">TRY IT</span>

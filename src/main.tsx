@@ -1,4 +1,3 @@
-
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { createRoot } from 'react-dom/client'
@@ -37,14 +36,13 @@ const setupVideoAutoplay = () => {
       const iframeElement = iframe as HTMLIFrameElement;
       let src = iframeElement.src;
       
-      // Create URL object for easier parameter manipulation
       try {
         const urlObj = new URL(src);
         const params = new URLSearchParams(urlObj.search);
         
-        // Set all required parameters
+        // Set parameters for unmuted autoplay and 1080p quality
         params.set('autoplay', '1');
-        params.set('mute', '1'); // Start muted to ensure autoplay
+        params.set('mute', '0'); // Start unmuted
         params.set('controls', '1');
         params.set('rel', '0');
         params.set('showinfo', '0');
@@ -52,14 +50,12 @@ const setupVideoAutoplay = () => {
         params.set('hd', '1');
         params.set('vq', 'hd1080');
         
-        // Get video ID from src
         const videoId = params.get('v') || src.split('/').pop();
         if (videoId) {
           params.set('playlist', videoId);
           params.set('loop', '1');
         }
         
-        // Update URL with enhanced parameters
         urlObj.search = params.toString();
         iframeElement.src = urlObj.toString();
         
@@ -72,36 +68,6 @@ const setupVideoAutoplay = () => {
   
   // Initial enhancement
   setTimeout(enhanceYouTubeVideos, 1000);
-  
-  // Unmute videos on first user interaction
-  const unmuteOnInteraction = () => {
-    const iframes = document.querySelectorAll('iframe[src*="youtube.com"]');
-    iframes.forEach(iframe => {
-      const iframeElement = iframe as HTMLIFrameElement;
-      let src = iframeElement.src;
-      
-      try {
-        const urlObj = new URL(src);
-        const params = new URLSearchParams(urlObj.search);
-        
-        // Only change mute parameter
-        params.set('mute', '0');
-        
-        urlObj.search = params.toString();
-        iframeElement.src = urlObj.toString();
-      } catch (error) {
-        console.error('Error unmuting YouTube iframe:', error);
-      }
-    });
-    
-    // Remove listeners after first interaction
-    document.removeEventListener('click', unmuteOnInteraction);
-    document.removeEventListener('touchstart', unmuteOnInteraction);
-  };
-  
-  // Listen for user interaction to unmute
-  document.addEventListener('click', unmuteOnInteraction, { once: true });
-  document.addEventListener('touchstart', unmuteOnInteraction, { once: true });
   
   // Re-enhance videos when visibility changes
   document.addEventListener('visibilitychange', () => {
