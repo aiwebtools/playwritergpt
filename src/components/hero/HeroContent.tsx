@@ -32,9 +32,27 @@ const HeroContent = () => {
       
       <div className="flex items-center space-x-2 mt-8">
         <div className="flex -space-x-2">
-          <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs animate-float" style={{ animationDelay: '0s' }}>JD</div>
-          <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs animate-float" style={{ animationDelay: '0.3s' }}>SM</div>
-          <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs animate-float" style={{ animationDelay: '0.6s' }}>KL</div>
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20 animate-float" style={{ animationDelay: '0s' }}>
+            <img 
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=150&h=150" 
+              alt="Jane Davis" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20 animate-float" style={{ animationDelay: '0.3s' }}>
+            <img 
+              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=150&h=150" 
+              alt="Samuel Miller" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20 animate-float" style={{ animationDelay: '0.6s' }}>
+            <img 
+              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=150&h=150" 
+              alt="Kelly Lee" 
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xs animate-float" style={{ animationDelay: '0.9s' }}>+</div>
         </div>
         <span className="text-sm text-white">Join thousands of playwrights using PlayWriter GPT</span>
