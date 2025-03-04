@@ -7,54 +7,73 @@ const HeroVideo = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   
   useEffect(() => {
-    // Try to force autoplay when component mounts
+    // Enhanced autoplay handling
     const attemptAutoplay = () => {
       try {
         if (iframeRef.current) {
-          // For YouTube iframe API - alternative approach
-          // Add the hd=1 parameter to force high definition and vq=hd1080 for 1080p
+          // Add autoplay parameters and ensure HD quality
           const currentSrc = iframeRef.current.src;
-          // Remove the iframe and re-add it to force the quality setting
-          const newSrc = ensureQualityParameters(currentSrc);
+          // Force autoplay with enhanced parameters
+          const newSrc = ensureParameters(currentSrc);
           iframeRef.current.src = newSrc;
           
-          // Log for debugging
-          console.log('Attempting to autoplay video with HD quality settings');
+          console.log('Attempting to autoplay video with enhanced settings');
         }
       } catch (error) {
         console.error('Error attempting to autoplay:', error);
       }
     };
     
-    // Function to ensure quality parameters are in the URL
-    const ensureQualityParameters = (url: string) => {
-      // Make sure we have HD enabled
-      if (url.indexOf('hd=1') === -1) {
-        url = url.includes('?') ? `${url}&hd=1` : `${url}?hd=1`;
-      }
+    // Improved function to ensure all required parameters are in the URL
+    const ensureParameters = (url: string) => {
+      // Parse URL to manipulate parameters more reliably
+      const urlObj = new URL(url);
+      const params = new URLSearchParams(urlObj.search);
       
-      // Add the vq parameter for 1080p
-      if (url.indexOf('vq=hd1080') === -1) {
-        url = `${url}&vq=hd1080`;
-      }
+      // Set all required parameters
+      params.set('autoplay', '1');
+      params.set('mute', '1'); // Start muted to ensure autoplay
+      params.set('controls', '1');
+      params.set('rel', '0');
+      params.set('showinfo', '0');
+      params.set('enablejsapi', '1');
+      params.set('hd', '1');
+      params.set('vq', 'hd1080');
+      params.set('playlist', 'KKldzg40wEI'); // Loop the video by setting playlist to same ID
+      params.set('loop', '1');
       
-      return url;
+      // Replace search params and return the full URL
+      urlObj.search = params.toString();
+      return urlObj.toString();
     };
     
-    // Attempt autoplay after a short delay to ensure DOM is ready
+    // Try autoplay on load and after a delay to ensure DOM is ready
+    attemptAutoplay();
     const timer = setTimeout(attemptAutoplay, 1000);
     
-    return () => clearTimeout(timer);
+    // Handle visibility changes to restart video when tab becomes visible again
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && iframeRef.current) {
+        attemptAutoplay();
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
 
   return (
     <div className="relative animate-on-scroll video-container" style={{ animationDelay: '0.3s' }}>
-      {/* YouTube Video Embed */}
+      {/* YouTube Video Embed with enhanced autoplay capabilities */}
       <div className="relative glass-card rounded-2xl overflow-hidden shadow-lg w-full aspect-video max-w-lg mx-auto">
         <iframe 
           ref={iframeRef}
           className="w-full h-full"
-          src="https://www.youtube.com/embed/KKldzg40wEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080"
+          src="https://www.youtube.com/embed/KKldzg40wEI?autoplay=1&mute=1&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080&playlist=KKldzg40wEI&loop=1"
           title="Playwriter GPT Demo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
