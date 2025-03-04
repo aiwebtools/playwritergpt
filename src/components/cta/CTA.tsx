@@ -30,7 +30,7 @@ const CTA = () => {
       {/* Background Elements */}
       <CTABackground />
       
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <CTACard />
         <CTAStats />
       </div>
