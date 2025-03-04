@@ -7,7 +7,7 @@ const HeroButtons = () => {
   return (
     <div className="flex flex-wrap gap-4">
       <Button asChild className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg shadow-lg pulse-on-hover btn-3d">
-        <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer">
           <PenSquare className="h-5 w-5 animate-pulse" />
           PlayWriter GPT
         </a>

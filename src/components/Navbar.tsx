@@ -92,7 +92,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsButtonHovered(false)}
             >
               <a 
-                href="https://chat.openai.com/" 
+                href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center"
@@ -114,7 +114,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu - Optimized */}
+      {/* Mobile Menu */}
       <div
         className={cn(
           'fixed inset-x-0 top-[68px] z-40 bg-vetdark/95 backdrop-blur-md shadow-md transition-all duration-300 ease-in-out md:hidden',
@@ -160,7 +160,7 @@ const Navbar = () => {
             className="mt-2 bg-vetprimary hover:bg-vethighlight text-white w-full flex items-center justify-center gap-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer">
               <PenSquare className="h-4 w-4 animate-pulse" />
               Try PlayWriter GPT
             </a>

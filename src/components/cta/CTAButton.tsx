@@ -10,7 +10,7 @@ const CTAButton = () => {
         asChild 
         className="bg-vetprimary hover:bg-vethighlight text-white rounded-lg px-8 py-6 text-lg shadow-glow btn-hover-effect hover-scale"
       >
-        <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer">
           Start Creating with PlayWriter GPT <ArrowRight className="ml-2 h-5 w-5" />
         </a>
       </Button>
