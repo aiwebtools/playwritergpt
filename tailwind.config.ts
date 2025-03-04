@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,7 +70,7 @@ export default {
 				vetchardark: '#121420',
 				vetcard: '#222533',
 				vetmuted: '#404656',
-				vethighlight: '#4F6BFF'
+				vethighlight: '#9b87f5'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

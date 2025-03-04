@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -33,7 +32,7 @@
 
     --border: 224 20% 20%;
     --input: 224 20% 18%;
-    --ring: 221 83% 53%;
+    --ring: 262 61% 63%;
 
     --radius: 0.75rem;
   }

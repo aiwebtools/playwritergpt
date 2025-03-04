@@ -43,7 +43,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <a href="#" className="flex flex-col items-start hover-scale mb-4">
               <div className="flex items-center space-x-2 mb-2">
-                <Theater size={24} className="text-vetprimary" />
+                <Theater size={24} className="text-vetaccent" />
                 <span className="text-xl font-semibold text-white">PlayWriter GPT</span>
               </div>
               <div className="ml-9">
@@ -51,7 +51,7 @@ const Footer = () => {
                   href="https://aiwebtools.ai" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-xs text-gray-400 block hover:text-vetprimary transition-colors"
+                  className="text-xs text-gray-400 block hover:text-vetaccent transition-colors"
                 >
                   Presented by AiWebTools.Ai
                 </a>
@@ -70,10 +70,10 @@ const Footer = () => {
               </span>
             </div>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetprimary transition-colors">
+              <a href="https://www.instagram.com/aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetaccent transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="https://www.tiktok.com/@aiwebtools" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetprimary transition-colors">
+              <a href="https://www.tiktok.com/@aiwebtools" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetaccent transition-colors">
                 <TikTokIcon className="h-6 w-6" />
               </a>
             </div>
@@ -82,13 +82,13 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal Information</h3>
             <ul className="space-y-3">
-              <li><a href="https://aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">About Us</a></li>
-              <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Privacy Policy</a></li>
-              <li><a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Terms of Service</a></li>
+              <li><a href="https://aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">About Us</a></li>
+              <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">Privacy Policy</a></li>
+              <li><a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">Terms of Service</a></li>
               <li><Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
                   onClick={scrollToDisclaimer}
                 >
                   <AlertTriangle size={12} className="mr-2 text-yellow-500" />
@@ -98,12 +98,12 @@ const Footer = () => {
               <li>
                 <span className="text-gray-400 font-semibold">Contact:</span>
                 <div className="ml-2 mt-1 space-y-2">
-                  <a href="mailto:contact@ai-webtools.com" className="text-gray-400 hover:text-vetprimary hover-scale flex items-center gap-2">
-                    <Mail size={14} className="text-vetprimary" />
+                  <a href="mailto:contact@ai-webtools.com" className="text-gray-400 hover:text-vetaccent hover-scale flex items-center gap-2">
+                    <Mail size={14} className="text-vetaccent" />
                     contact@ai-webtools.com
                   </a>
-                  <a href="tel:+14758008096" className="text-gray-400 hover:text-vetprimary hover-scale flex items-center gap-2">
-                    <Phone size={14} className="text-vetprimary" />
+                  <a href="tel:+14758008096" className="text-gray-400 hover:text-vetaccent hover-scale flex items-center gap-2">
+                    <Phone size={14} className="text-vetaccent" />
                     (475) 800-8096
                   </a>
                 </div>
@@ -118,7 +118,7 @@ const Footer = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
                   onClick={() => window.open('https://aiwebtools.ai', '_blank')}
                 >
                   MORE AI TOOLS
@@ -128,7 +128,7 @@ const Footer = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
                   onClick={() => window.open('https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt', '_blank')}
                 >
                   TRY PLAYWRITER GPT
@@ -138,7 +138,7 @@ const Footer = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
                   onClick={scrollToFaq}
                 >
                   <FileText size={12} className="mr-2" />
@@ -150,7 +150,7 @@ const Footer = () => {
                   asChild
                   variant="outline" 
                   size="sm" 
-                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
                 >
                   <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer">
                     <Shield size={12} className="mr-2" />
@@ -169,7 +169,7 @@ const Footer = () => {
               href="https://aiwebtools.ai" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-gray-500 hover:text-vetprimary transition-colors"
+              className="text-gray-500 hover:text-vetaccent transition-colors"
             >
               AI WEB TOOLS LLC
             </a>
