@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Theater, ExternalLink, Heart, Camera } from 'lucide-react';
@@ -12,36 +11,31 @@ const HeroVideo = () => {
     const attemptAutoplay = () => {
       try {
         if (iframeRef.current) {
-          const currentSrc = iframeRef.current.src;
-          const newSrc = ensureParameters(currentSrc);
-          iframeRef.current.src = newSrc;
-          console.log('Attempting to autoplay video with enhanced settings');
+          const baseUrl = "https://www.youtube.com/embed/KKldzg40wEI";
+          const params = new URLSearchParams({
+            autoplay: "1",
+            mute: "0",
+            controls: "1",
+            rel: "0",
+            showinfo: "0",
+            enablejsapi: "1",
+            hd: "1",
+            vq: "hd1080",
+            playlist: "KKldzg40wEI",
+            loop: "1"
+          });
+          
+          const cleanUrl = `${baseUrl}?${params.toString()}`;
+          iframeRef.current.src = cleanUrl;
+          console.log('Attempting to autoplay video with clean URL:', cleanUrl);
         }
       } catch (error) {
         console.error('Error attempting to autoplay:', error);
       }
     };
     
-    const ensureParameters = (url: string) => {
-      const urlObj = new URL(url);
-      const params = new URLSearchParams(urlObj.search);
-      
-      params.set('autoplay', '1');
-      params.set('mute', '0');
-      params.set('controls', '1');
-      params.set('rel', '0');
-      params.set('showinfo', '0');
-      params.set('enablejsapi', '1');
-      params.set('hd', '1');
-      params.set('vq', 'hd1080');
-      params.set('playlist', 'KKldzg40wEI');
-      params.set('loop', '1');
-      
-      urlObj.search = params.toString();
-      return urlObj.toString();
-    };
-    
     attemptAutoplay();
+    
     const timer = setTimeout(attemptAutoplay, 1000);
     
     const handleVisibilityChange = () => {
@@ -82,7 +76,6 @@ const HeroVideo = () => {
         </Button>
       </div>
       
-      {/* Decorative elements - hide some on mobile for better focus */}
       <div className={`absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center ${isMobile ? 'hidden sm:flex' : ''}`}>
         <Heart className="h-10 w-10 text-vetaccent animate-pulse" />
       </div>
@@ -91,7 +84,6 @@ const HeroVideo = () => {
         <Camera className="h-8 w-8 text-vetsecondary" />
       </div>
       
-      {/* Call-to-action floating button - make smaller on mobile */}
       <a 
         href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" 
         target="_blank" 

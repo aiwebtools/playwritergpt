@@ -42,47 +42,52 @@ const setupVideoAutoplay = () => {
       let src = iframeElement.src;
       
       try {
-        const urlObj = new URL(src);
-        const params = new URLSearchParams(urlObj.search);
+        // Skip if the URL is already processed or too complex
+        if (src.includes('autoplay=1') && src.length > 300) {
+          console.log('Skipping already enhanced YouTube iframe');
+          return;
+        }
         
-        // On mobile, reduce video quality if needed for better performance
+        // Create a clean URL instead of modifying the existing one
+        const baseUrl = src.split('?')[0]; // Get the base URL without parameters
         const isMobile = isMobileBrowser();
         
         // Set parameters for unmuted autoplay and appropriate quality
-        params.set('autoplay', '1');
-        params.set('mute', '0'); // Start unmuted
-        params.set('controls', '1');
-        params.set('rel', '0');
-        params.set('showinfo', '0');
-        params.set('enablejsapi', '1');
-        params.set('hd', '1');
+        const params = new URLSearchParams({
+          autoplay: '1',
+          mute: '0',
+          controls: '1',
+          rel: '0',
+          showinfo: '0',
+          enablejsapi: '1',
+          hd: '1',
+          vq: isMobile ? 'hd720' : 'hd1080',
+          loop: '1'
+        });
         
-        // On mobile devices, choose appropriate quality to prevent buffering
-        params.set('vq', isMobile ? 'hd720' : 'hd1080');
-        
-        const videoId = params.get('v') || src.split('/').pop();
+        // Extract video ID and set it as the playlist for looping
+        const videoId = src.split('/').pop()?.split('?')[0] || '';
         if (videoId) {
           params.set('playlist', videoId);
-          params.set('loop', '1');
         }
         
         // Mobile specific optimizations
         if (isMobile) {
-          params.set('playsinline', '1'); // Ensure video plays inline on mobile
-          params.set('modestbranding', '1'); // Reduce branding for cleaner UI
+          params.set('playsinline', '1');
+          params.set('modestbranding', '1');
         }
         
-        urlObj.search = params.toString();
-        iframeElement.src = urlObj.toString();
+        const cleanUrl = `${baseUrl}?${params.toString()}`;
+        iframeElement.src = cleanUrl;
         
-        console.log('Enhanced YouTube iframe for autoplay:', iframeElement.src);
+        console.log('Enhanced YouTube iframe for autoplay:', cleanUrl);
       } catch (error) {
         console.error('Error enhancing YouTube iframe:', error);
       }
     });
   };
   
-  // Initial enhancement
+  // Initial enhancement with a slight delay to ensure DOM is ready
   setTimeout(enhanceYouTubeVideos, 1000);
   
   // Re-enhance videos when visibility changes
