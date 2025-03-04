@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Menu, X, Stethoscope, Heart, AlertTriangle } from 'lucide-react';
+import { BookOpen, Menu, X, PenSquare, Theater, AlertTriangle } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,8 +44,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="#" className="flex flex-col items-start hover-scale">
           <div className="flex items-center space-x-2">
-            <PawPrint size={28} className="text-vetprimary" />
-            <span className="text-xl font-semibold text-white">PetCareGPT</span>
+            <Theater size={28} className="text-vetprimary" />
+            <span className="text-xl font-semibold text-white">PlayWriter GPT</span>
           </div>
           <a 
             href="https://aiwebtools.ai" 
@@ -55,9 +55,6 @@ const Navbar = () => {
           >
             Presented by AiWebTools.Ai
           </a>
-          <span className="text-xs text-white ml-9 flex items-center">
-            Made with <Heart size={12} className="mx-1 text-[#ea384c] animate-pulse" fill="#ea384c" /> for better and free healthcare
-          </span>
         </a>
 
         {/* Desktop Navigation */}
@@ -82,18 +79,7 @@ const Navbar = () => {
             </Button>
           </div>
           
-          <div className="flex items-center space-x-3">
-            <Button 
-              asChild 
-              variant="ghost" 
-              className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-1 text-xs py-1 px-2"
-            >
-              <a href="https://aidoctorgpt.lovable.app/" target="_blank" rel="noopener noreferrer">
-                <Stethoscope size={14} />
-                <span className="ml-1">AI DOCTOR GPT</span>
-              </a>
-            </Button>
-            
+          <div className="flex items-center space-x-3">            
             <Button 
               asChild 
               variant="default"
@@ -106,13 +92,13 @@ const Navbar = () => {
               onMouseLeave={() => setIsButtonHovered(false)}
             >
               <a 
-                href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" 
+                href="https://chat.openai.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center"
               >
-                <PawPrint className={cn("h-4 w-4 mr-1", isButtonHovered ? "animate-bounce" : "")} />
-                Try AI Veterinarian GPT
+                <PenSquare className={cn("h-4 w-4 mr-1", isButtonHovered ? "animate-bounce" : "")} />
+                Try PlayWriter GPT
               </a>
             </Button>
           </div>
@@ -136,16 +122,6 @@ const Navbar = () => {
         )}
       >
         <div className="flex flex-col space-y-3 px-6">
-          <a 
-            href="https://aidoctorgpt.lovable.app/" 
-            className="text-gray-300 py-2 border-b border-vetmuted flex items-center gap-2"
-            onClick={() => setMobileMenuOpen(false)}
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Stethoscope size={16} />
-            AI DOCTOR GPT
-          </a>
           <a 
             href="#features" 
             className="text-gray-300 py-2 border-b border-vetmuted"
@@ -184,9 +160,9 @@ const Navbar = () => {
             className="mt-2 bg-vetprimary hover:bg-vethighlight text-white w-full flex items-center justify-center gap-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">
-              <PawPrint className="h-4 w-4 animate-pulse" />
-              Try AI Veterinarian GPT
+            <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">
+              <PenSquare className="h-4 w-4 animate-pulse" />
+              Try PlayWriter GPT
             </a>
           </Button>
         </div>

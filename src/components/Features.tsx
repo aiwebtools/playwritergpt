@@ -1,15 +1,15 @@
 
 import React, { useEffect } from 'react';
 import { 
-  PawPrint, 
-  Camera, 
-  Heart, 
+  Theater, 
+  BookOpen, 
+  PenSquare, 
   FileText, 
-  Search, 
   MessageSquare, 
-  PieChart, 
-  Languages, 
-  ShieldCheck 
+  Users, 
+  Globe, 
+  Sparkles, 
+  Clock 
 } from 'lucide-react';
 
 interface FeatureCardProps {
@@ -63,78 +63,78 @@ const Features = () => {
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center mb-16 animate-on-scroll">
           <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetmuted text-vetprimary mb-4">
-            <PawPrint size={16} className="mr-2" />
-            <span>Comprehensive Pet Care</span>
+            <PenSquare size={16} className="mr-2" />
+            <span>Professional Playwriting</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Advanced Features for <span className="text-gradient">Complete Pet Health</span>
+            Advanced Features for <span className="text-gradient">Theatrical Excellence</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            VetGPT combines cutting-edge AI with veterinary expertise to provide the best possible care for your pets.
+            PlayWriter GPT combines cutting-edge AI with theatrical expertise to help create compelling, production-ready plays.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
-            icon={<Camera className="h-6 w-6 text-vetprimary" />}
-            title="Image Analysis"
-            description="Upload photos of your pet for visual assessment of conditions, symptoms, and overall health status."
+            icon={<PenSquare className="h-6 w-6 text-vetprimary" />}
+            title="Scene-by-Scene Creation"
+            description="Develop your play one scene at a time with detailed stage directions, dialogue, and character development."
             delay={0.1}
           />
           
           <FeatureCard
             icon={<MessageSquare className="h-6 w-6 text-vetprimary" />}
-            title="Expert Consultations"
-            description="Get detailed answers to your pet health questions with the knowledge of veterinary medicine."
+            title="Collaborative Process"
+            description="Work closely with AI to refine each element of your play, from plot structure to dialogue nuances."
             delay={0.2}
           />
           
           <FeatureCard
-            icon={<PieChart className="h-6 w-6 text-vetprimary" />}
-            title="Health Monitoring"
-            description="Track your pet's weight, diet, and vital statistics to ensure they stay in optimal health."
+            icon={<Users className="h-6 w-6 text-vetprimary" />}
+            title="Character Development"
+            description="Create complex, believable characters with detailed backstories, motivations, and emotional arcs."
             delay={0.3}
           />
           
           <FeatureCard
-            icon={<Search className="h-6 w-6 text-vetprimary" />}
-            title="Research Capabilities"
-            description="Access the latest veterinary research and information relevant to your pet's specific needs."
+            icon={<Sparkles className="h-6 w-6 text-vetprimary" />}
+            title="Creative Techniques"
+            description="Implement advanced playwriting techniques like cliffhangers, dramatic irony, and compelling narrative arcs."
             delay={0.4}
           />
           
           <FeatureCard
             icon={<FileText className="h-6 w-6 text-vetprimary" />}
-            title="Detailed Reports"
-            description="Receive comprehensive consultation summaries and care plans for your records."
+            title="Professional Formatting"
+            description="Receive perfectly formatted theatrical scripts that follow industry standards for production."
             delay={0.5}
           />
           
           <FeatureCard
-            icon={<Heart className="h-6 w-6 text-vetprimary" />}
-            title="Compassionate Support"
-            description="Get emotional support and practical guidance for pet loss and end-of-life care decisions."
+            icon={<Theater className="h-6 w-6 text-vetprimary" />}
+            title="Genre Versatility"
+            description="Create plays across diverse genres from comedy and drama to experimental theater and musicals."
             delay={0.6}
           />
           
           <FeatureCard
-            icon={<Languages className="h-6 w-6 text-vetprimary" />}
-            title="Multilingual Support"
-            description="Communicate in your preferred language for the most comfortable experience."
+            icon={<Globe className="h-6 w-6 text-vetprimary" />}
+            title="Research Integration"
+            description="Incorporate historical facts, cultural contexts, and specialized knowledge into your plays."
             delay={0.7}
           />
           
           <FeatureCard
-            icon={<ShieldCheck className="h-6 w-6 text-vetprimary" />}
-            title="Privacy Protection"
-            description="Your pet's data and your personal information are kept secure and confidential."
+            icon={<BookOpen className="h-6 w-6 text-vetprimary" />}
+            title="Educational Resources"
+            description="Access playwriting techniques, theatrical history, and dramaturgical insights during the creation process."
             delay={0.8}
           />
           
           <FeatureCard
-            icon={<PawPrint className="h-6 w-6 text-vetprimary" />}
-            title="Multi-Species Support"
-            description="Get help for all types of pets, from dogs and cats to exotics and wildlife."
+            icon={<Clock className="h-6 w-6 text-vetprimary" />}
+            title="Efficient Creation"
+            description="Complete full-length plays in a fraction of the time it would take through traditional methods."
             delay={0.9}
           />
         </div>

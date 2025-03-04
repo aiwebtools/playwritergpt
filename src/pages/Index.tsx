@@ -54,19 +54,19 @@ const Index = () => {
             <h2 className="text-2xl font-bold text-white mb-6 text-center">🚨 Legal Disclaimer</h2>
             <div className="bg-vetcard/80 p-6 rounded-lg border border-vetmuted/40 shadow-md">
               <p className="text-gray-200 mb-4">
-                <strong>Not a Substitute for Professional Care:</strong> PetCareGPT is an AI tool designed to provide general information about pet health. It is not a substitute for professional veterinary advice, diagnosis, or treatment. This service does not establish a veterinarian-client-patient relationship (VCPR).
+                <strong>Educational and Creative Tool:</strong> PlayWriter GPT is an AI tool designed to assist with creative writing and playwriting. It does not guarantee commercial success, production feasibility, or universal acclaim for any plays created with its assistance.
               </p>
               <p className="text-gray-200 mb-4">
-                <strong>Emergency Situations:</strong> Always seek the advice of your veterinarian with any questions you may have regarding your pet's medical condition. Never disregard professional veterinary advice or delay in seeking it because of something you have read on this website or received from this AI tool.
+                <strong>Original Content:</strong> While PlayWriter GPT aims to create original content, the user is responsible for ensuring the final work does not infringe on existing copyrights, trademarks, or intellectual property rights. We recommend reviewing all generated content for originality.
               </p>
               <p className="text-gray-200 mb-4">
-                <strong>Limitation of Liability:</strong> By using PetCareGPT, you acknowledge and agree that AI WEB TOOLS LLC and its affiliates shall not be liable for any damages, direct or indirect, arising from your use of or reliance on any information provided by this service.
+                <strong>Limitation of Liability:</strong> By using PlayWriter GPT, you acknowledge and agree that AI WEB TOOLS LLC and its affiliates shall not be liable for any damages, direct or indirect, arising from your use of or reliance on any information or content provided by this service.
               </p>
               <p className="text-gray-200 mb-4">
-                <strong>Image Analysis Limitations:</strong> While our AI can analyze images to provide general observations, these should not be considered diagnostic. Visual assessments have limitations and cannot replace physical examination by a qualified veterinarian.
+                <strong>Content Guidelines:</strong> PlayWriter GPT is designed to adhere to ethical content creation standards. However, users are responsible for the themes, subject matter, and content they request. The AI will not knowingly assist in creating harmful, illegal, or unethical content.
               </p>
               <p className="text-gray-200">
-                <strong>Urgent Care:</strong> In case of emergency, contact your local veterinary emergency services immediately at the first sign of distress or concerning symptoms in your pet.
+                <strong>Rights to Created Content:</strong> Users retain rights to content created with the assistance of PlayWriter GPT, subject to our Terms of Service. AI WEB TOOLS LLC does not claim ownership of plays or creative works developed through our platform.
               </p>
             </div>
           </div>

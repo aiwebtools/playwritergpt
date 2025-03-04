@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PawPrint, Heart, Mail, Phone, Instagram, Shield, AlertTriangle, FileText } from 'lucide-react';
+import { Theater, Heart, Mail, Phone, Instagram, Shield, AlertTriangle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Custom TikTok icon component
@@ -43,8 +43,8 @@ const Footer = () => {
           <div className="md:col-span-2">
             <a href="#" className="flex flex-col items-start hover-scale mb-4">
               <div className="flex items-center space-x-2 mb-2">
-                <PawPrint size={24} className="text-vetprimary" />
-                <span className="text-xl font-semibold text-white">PetCareGPT</span>
+                <Theater size={24} className="text-vetprimary" />
+                <span className="text-xl font-semibold text-white">PlayWriter GPT</span>
               </div>
               <div className="ml-9">
                 <a 
@@ -56,17 +56,17 @@ const Footer = () => {
                   Presented by AiWebTools.Ai
                 </a>
                 <span className="text-xs text-white flex items-center">
-                  Made with <Heart size={12} className="mx-1 text-[#ea384c] animate-pulse" fill="#ea384c" /> for better and free healthcare
+                  Made with <Heart size={12} className="mx-1 text-[#ea384c] animate-pulse" fill="#ea384c" /> for creative expression
                 </span>
               </div>
             </a>
             <p className="text-gray-400 mb-4">
-              AI-powered virtual veterinary assistance providing general pet health information only. Not a substitute for professional veterinary care.
+              AI-powered playwriting assistant helping writers create professional theatrical scripts with compelling dialogue, rich character development, and engaging narratives.
             </p>
             <div className="flex items-center gap-2 mb-4">
               <AlertTriangle size={14} className="text-yellow-500" />
               <span className="text-xs text-gray-400">
-                Does not establish a veterinarian-client-patient relationship (VCPR)
+                For creative and educational purposes only
               </span>
             </div>
             <div className="flex space-x-4">
@@ -129,9 +129,9 @@ const Footer = () => {
                   variant="outline" 
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
-                  onClick={() => window.open('https://www.aidoctorgpt.com', '_blank')}
+                  onClick={() => window.open('https://chat.openai.com/', '_blank')}
                 >
-                  AI DOCTOR GPT
+                  TRY PLAYWRITER GPT
                 </Button>
               </li>
               <li>
@@ -176,7 +176,7 @@ const Footer = () => {
             . All rights reserved.
           </p>
           <p className="text-gray-500 text-xs mt-2 md:mt-0">
-            PetCareGPT is for informational purposes only. Not a substitute for professional veterinary care.
+            PlayWriter GPT is for creative and educational purposes only. Users retain rights to content created with our assistance.
           </p>
         </div>
       </div>

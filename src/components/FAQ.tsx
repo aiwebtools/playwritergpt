@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { PawPrint } from 'lucide-react';
+import { PenSquare } from 'lucide-react';
 
 const FAQ = () => {
   useEffect(() => {
@@ -31,28 +31,28 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What kind of pet health questions can VetGPT answer?",
-      answer: "VetGPT can address a wide range of pet health concerns including symptoms assessment, dietary advice, behavioral issues, preventative care, and emergency guidance. However, it's important to note that VetGPT should not replace professional veterinary care for serious or emergency situations."
+      question: "What kind of plays can PlayWriter GPT help me create?",
+      answer: "PlayWriter GPT can assist with virtually any theatrical genre including drama, comedy, tragedy, farce, musical theater, historical plays, experimental theater, and more. Whether you have a specific vision or need creative inspiration, our AI can help develop professional quality scripts tailored to your preferences."
     },
     {
-      question: "How does the photo analysis feature work?",
-      answer: "You can upload photos of your pet, visible symptoms, or conditions, and VetGPT will analyze the images to help identify potential issues. This visual assessment, combined with the information you provide about your pet's symptoms and behavior, helps VetGPT give more accurate guidance."
+      question: "How does the collaborative writing process work?",
+      answer: "After gathering your initial ideas about genre, premise, characters, and setting, PlayWriter GPT creates a detailed outline with act and scene breakdowns. We then write each scene individually, seeking your feedback and approval before moving to the next. You can modify, extend, or redirect the narrative at any point, ensuring the final play aligns perfectly with your creative vision."
     },
     {
-      question: "Is VetGPT a replacement for visiting a veterinarian?",
-      answer: "No, VetGPT is designed to supplement, not replace, professional veterinary care. While it can provide valuable guidance and information, it should not be used as the sole source of advice for serious health concerns or emergencies. Always consult with a qualified veterinarian for proper diagnosis and treatment."
+      question: "Is PlayWriter GPT a replacement for human playwrights?",
+      answer: "No, PlayWriter GPT is designed to be a creative assistant and collaborator, not a replacement for human creativity. It serves as a powerful tool to help overcome writer's block, explore new narrative directions, and streamline the writing process. The most compelling works often emerge from the synergy between human creative vision and AI assistance."
     },
     {
-      question: "What types of animals does VetGPT support?",
-      answer: "VetGPT supports a wide range of animals including dogs, cats, birds, small mammals (rabbits, guinea pigs, hamsters), reptiles, and even some livestock and exotic pets. The system has been trained on veterinary information covering numerous species and breeds."
+      question: "What elements are included in the plays created with PlayWriter GPT?",
+      answer: "Each play includes professionally formatted title page, character list, setting descriptions, detailed stage directions, dialogue, act and scene divisions, and optional author's notes. The scripts follow industry-standard theatrical formatting and include all the elements needed for potential production."
     },
     {
-      question: "How does VetGPT protect my privacy?",
-      answer: "VetGPT prioritizes your privacy and the security of your data. Information about your pets is kept confidential, and we adhere to strict data protection standards. Photos and consultation data are used only for the purpose of providing you with accurate advice."
+      question: "Can I use PlayWriter GPT for educational purposes?",
+      answer: "Absolutely! PlayWriter GPT is an excellent educational tool for drama teachers, theater students, and educational institutions. It can demonstrate theatrical structure, help students understand different genres and styles, and provide examples of effective dialogue and character development."
     },
     {
-      question: "Can VetGPT help in emergency situations?",
-      answer: "While VetGPT can provide guidance in urgent situations, it will always advise seeking immediate professional veterinary care for emergencies. It can help you identify signs that require urgent attention and suggest first aid measures while you seek professional help."
+      question: "How does PlayWriter GPT handle revisions and feedback?",
+      answer: "After each scene is written, you're given the opportunity to request modifications, extensions, or completely new directions. The AI adapts to your feedback, ensuring the narrative evolves according to your creative preferences while maintaining consistency throughout the entire play."
     }
   ];
 
@@ -61,14 +61,14 @@ const FAQ = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 animate-on-scroll">
           <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetmuted text-vetprimary mb-4">
-            <PawPrint size={16} className="mr-2" />
+            <PenSquare size={16} className="mr-2" />
             <span>Questions & Answers</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Get answers to common questions about VetGPT and how it can help your pets.
+            Get answers to common questions about PlayWriter GPT and how it can help bring your theatrical visions to life.
           </p>
         </div>
         

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PawPrint, Upload, MessageSquare, FileText } from 'lucide-react';
+import { PenSquare, Upload, MessageSquare, FileText } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Demo = () => {
@@ -40,14 +40,14 @@ const Demo = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16 animate-on-scroll">
           <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetaccent/20 text-white border border-vetaccent/30 mb-4">
-            <PawPrint size={16} className="mr-2 text-vetaccent" />
-            <span className="text-vetaccent">Simple Process</span>
+            <PenSquare size={16} className="mr-2 text-vetaccent" />
+            <span className="text-vetaccent">Creative Process</span>
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">
-            How <span className="text-gradient">VetGPT</span> Works
+            How <span className="text-gradient">PlayWriter GPT</span> Works
           </h2>
           <p className="text-lg md:text-xl text-indigo-200 max-w-2xl mx-auto">
-            Get expert veterinary guidance in three simple steps.
+            Create award-winning theatrical plays in three simple steps.
           </p>
         </div>
 
@@ -57,11 +57,11 @@ const Demo = () => {
               1
             </div>
             <div className="h-14 md:h-16 flex items-center justify-center mb-3 md:mb-4">
-              <Upload className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
+              <MessageSquare className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Upload Photo</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Share Your Vision</h3>
             <p className="text-sm md:text-base text-indigo-200">
-              Share a photo of your pet or describe their symptoms in detail.
+              Tell us about your play idea or let us inspire you with creative suggestions.
             </p>
           </div>
           
@@ -70,11 +70,11 @@ const Demo = () => {
               2
             </div>
             <div className="h-14 md:h-16 flex items-center justify-center mb-3 md:mb-4">
-              <MessageSquare className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
+              <PenSquare className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Consult VetGPT</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Collaborative Creation</h3>
             <p className="text-sm md:text-base text-indigo-200">
-              Answer follow-up questions to provide a complete picture of your pet's health.
+              Review scenes, suggest changes, and watch your play develop scene by scene.
             </p>
           </div>
           
@@ -85,9 +85,9 @@ const Demo = () => {
             <div className="h-14 md:h-16 flex items-center justify-center mb-3 md:mb-4">
               <FileText className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Get Expert Advice</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Polished Final Script</h3>
             <p className="text-sm md:text-base text-indigo-200">
-              Receive a detailed assessment, care plan, and actionable next steps.
+              Receive a professional theatrical script complete with dialogue, stage directions, and acts.
             </p>
           </div>
         </div>
