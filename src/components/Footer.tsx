@@ -119,7 +119,7 @@ const Footer = () => {
                   variant="outline" 
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
-                  onClick={() => window.open('https://www.aiwebtools.ai', '_blank')}
+                  onClick={() => window.open('https://aiwebtools.ai', '_blank')}
                 >
                   MORE AI TOOLS
                 </Button>
@@ -129,7 +129,7 @@ const Footer = () => {
                   variant="outline" 
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
-                  onClick={() => window.open('https://chat.openai.com/', '_blank')}
+                  onClick={() => window.open('https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt', '_blank')}
                 >
                   TRY PLAYWRITER GPT
                 </Button>
