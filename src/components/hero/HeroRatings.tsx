@@ -13,16 +13,16 @@ const HeroRatings = () => {
           <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
           <div className="relative">
             <Star className="h-5 w-5 text-gray-300" />
-            <div className="absolute inset-0 overflow-hidden" style={{ width: '40%' }}>
+            <div className="absolute inset-0 overflow-hidden" style={{ width: '20%' }}>
               <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
             </div>
           </div>
         </div>
-        <span className="ml-2 text-white font-medium">4.4/5</span>
+        <span className="ml-2 text-white font-medium">4.1/5</span>
       </div>
       
       <div className="flex items-center px-4 py-1.5 bg-vetprimary/20 rounded-full border border-vetprimary/30 hover:shadow-glow hover:shadow-vetprimary/30 transition-all duration-300 hover:scale-105 cursor-default">
-        <span className="text-vetprimary font-bold text-base">10k+</span>
+        <span className="text-vetprimary font-bold text-base">3k+</span>
         <span className="ml-1 text-white font-medium">active users</span>
       </div>
       

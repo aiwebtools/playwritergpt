@@ -15,7 +15,7 @@ const CTAStats = () => {
       </div>
       
       <div className="bg-vetcard rounded-xl p-6 shadow-glass border border-vetmuted/30 text-center animate-on-scroll interactive-card" style={{ animationDelay: '0.3s' }}>
-        <div className="text-2xl font-bold text-vetprimary mb-2">5,000+</div>
+        <div className="text-2xl font-bold text-vetprimary mb-2">3,000+</div>
         <p className="text-gray-300">Writers already using PlayWriter GPT</p>
       </div>
     </div>
