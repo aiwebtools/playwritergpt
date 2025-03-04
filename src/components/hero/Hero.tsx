@@ -4,9 +4,11 @@ import HeroBackground from './HeroBackground';
 import HeroContent from './HeroContent';
 import HeroVideo from './HeroVideo';
 import HeroDisclaimer from './HeroDisclaimer';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     // Use a more reliable way to check if elements are in the viewport
@@ -20,8 +22,8 @@ const Hero = () => {
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -10% 0px' // Trigger slightly before element enters viewport
+      threshold: isMobile ? 0.05 : 0.1, // Lower threshold for mobile
+      rootMargin: isMobile ? '0px 0px -5% 0px' : '0px 0px -10% 0px' // Trigger earlier on mobile
     });
     
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -30,10 +32,13 @@ const Hero = () => {
     return () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
-  }, []);
+  }, [isMobile]);
 
   // Simplified mouse follow effect with better cross-browser compatibility
+  // Disable floating button animation on mobile for better performance
   useEffect(() => {
+    if (isMobile) return; // Skip effect on mobile
+    
     const floatingBtn = document.querySelector('.floating-btn');
     if (!floatingBtn) return;
     
@@ -63,15 +68,15 @@ const Hero = () => {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
-    <div className="min-h-screen pt-20 px-6 md:px-8 flex flex-col justify-center relative overflow-hidden" ref={heroRef}>
-      {/* Background Elements */}
+    <div className="min-h-screen pt-16 md:pt-20 px-4 md:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden" ref={heroRef}>
+      {/* Background Elements - simplified on mobile */}
       <HeroBackground />
       
       <div className="max-w-7xl mx-auto w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
           {/* Hero Content */}
           <HeroContent />
           

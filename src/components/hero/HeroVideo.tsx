@@ -1,9 +1,12 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Theater, ExternalLink, Heart, Camera } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroVideo = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const attemptAutoplay = () => {
@@ -73,24 +76,31 @@ const HeroVideo = () => {
         <Button asChild className="bg-vetprimary hover:bg-vetprimary/90 text-white rounded-lg px-8 py-6 text-lg font-bold shadow-lg btn-3d pulse-on-hover flex items-center gap-2">
           <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer">
             <Theater className="h-6 w-6 animate-pulse" />
-            TRY PlayWriter GPT Now
+            {isMobile ? "TRY NOW" : "TRY PlayWriter GPT Now"}
             <ExternalLink className="h-5 w-5 ml-1" />
           </a>
         </Button>
       </div>
       
-      <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center">
+      {/* Decorative elements - hide some on mobile for better focus */}
+      <div className={`absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-vetaccent/10 flex items-center justify-center ${isMobile ? 'hidden sm:flex' : ''}`}>
         <Heart className="h-10 w-10 text-vetaccent animate-pulse" />
       </div>
       
-      <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-vetsecondary/10 flex items-center justify-center">
+      <div className={`absolute -top-6 -left-6 w-20 h-20 rounded-full bg-vetsecondary/10 flex items-center justify-center ${isMobile ? 'hidden sm:flex' : ''}`}>
         <Camera className="h-8 w-8 text-vetsecondary" />
       </div>
       
-      <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer" className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-lg hover:shadow-glow hover:shadow-vetprimary/50 transition-all duration-300 hover:scale-110 z-20 neon-effect">
-        <Theater className="h-8 w-8 mb-2 animate-bounce" />
-        <span className="text-base font-bold">TRY IT</span>
-        <span className="text-base font-bold">NOW</span>
+      {/* Call-to-action floating button - make smaller on mobile */}
+      <a 
+        href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={`absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-vetprimary hover:bg-vetprimary/90 text-white rounded-full flex flex-col items-center justify-center shadow-lg hover:shadow-glow hover:shadow-vetprimary/50 transition-all duration-300 hover:scale-110 z-20 neon-effect ${isMobile ? 'w-20 h-20' : 'w-32 h-32'}`}
+      >
+        <Theater className={`${isMobile ? 'h-6 w-6 mb-1' : 'h-8 w-8 mb-2'} animate-bounce`} />
+        <span className={`${isMobile ? 'text-sm' : 'text-base'} font-bold`}>TRY IT</span>
+        <span className={`${isMobile ? 'text-sm' : 'text-base'} font-bold`}>NOW</span>
       </a>
     </div>
   );

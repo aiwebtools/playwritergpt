@@ -1,3 +1,4 @@
+
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { createRoot } from 'react-dom/client'
@@ -25,9 +26,13 @@ if (isFacebookBrowser()) {
 if (isMobileBrowser()) {
   console.log('Mobile browser detected, applying mobile optimizations');
   document.documentElement.classList.add('mobile-browser');
+  
+  // On mobile, reduce animation duration and disable complex animations
+  document.documentElement.style.setProperty('--animation-duration', '0.3s');
+  document.documentElement.classList.add('reduced-motion');
 }
 
-// Enhanced video autoplay support
+// Enhanced video autoplay support - mobile-optimized
 const setupVideoAutoplay = () => {
   // Function to enhance YouTube iframes for autoplay
   const enhanceYouTubeVideos = () => {
@@ -40,7 +45,10 @@ const setupVideoAutoplay = () => {
         const urlObj = new URL(src);
         const params = new URLSearchParams(urlObj.search);
         
-        // Set parameters for unmuted autoplay and 1080p quality
+        // On mobile, reduce video quality if needed for better performance
+        const isMobile = isMobileBrowser();
+        
+        // Set parameters for unmuted autoplay and appropriate quality
         params.set('autoplay', '1');
         params.set('mute', '0'); // Start unmuted
         params.set('controls', '1');
@@ -48,12 +56,20 @@ const setupVideoAutoplay = () => {
         params.set('showinfo', '0');
         params.set('enablejsapi', '1');
         params.set('hd', '1');
-        params.set('vq', 'hd1080');
+        
+        // On mobile devices, choose appropriate quality to prevent buffering
+        params.set('vq', isMobile ? 'hd720' : 'hd1080');
         
         const videoId = params.get('v') || src.split('/').pop();
         if (videoId) {
           params.set('playlist', videoId);
           params.set('loop', '1');
+        }
+        
+        // Mobile specific optimizations
+        if (isMobile) {
+          params.set('playsinline', '1'); // Ensure video plays inline on mobile
+          params.set('modestbranding', '1'); // Reduce branding for cleaner UI
         }
         
         urlObj.search = params.toString();
@@ -75,6 +91,11 @@ const setupVideoAutoplay = () => {
       enhanceYouTubeVideos();
     }
   });
+  
+  // Handle page resize (e.g., orientation change on mobile)
+  window.addEventListener('resize', () => {
+    setTimeout(enhanceYouTubeVideos, 500);
+  }, { passive: true });
 };
 
 // Setup video autoplay when DOM is ready
@@ -82,6 +103,25 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', setupVideoAutoplay);
 } else {
   setupVideoAutoplay();
+}
+
+// Add touch-specific event handlers for mobile
+if (isMobileBrowser()) {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add touch-active class to interactive elements when touched
+    const interactiveElements = document.querySelectorAll('button, a, .interactive-card');
+    interactiveElements.forEach(element => {
+      element.addEventListener('touchstart', () => {
+        element.classList.add('touch-active');
+      }, { passive: true });
+      
+      element.addEventListener('touchend', () => {
+        setTimeout(() => {
+          element.classList.remove('touch-active');
+        }, 200);
+      }, { passive: true });
+    });
+  });
 }
 
 // Safely get root element and render

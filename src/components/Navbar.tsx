@@ -3,11 +3,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Menu, X, PenSquare, Theater, AlertTriangle } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
+  const isMobile = useIsMobile();
 
   // Debounced scroll handler for better performance
   const handleScroll = useCallback(() => {
@@ -42,7 +44,7 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex flex-col items-start hover-scale">
+        <div className="flex flex-col items-start hover-scale">
           <div className="flex items-center space-x-2">
             <Theater size={28} className="text-vetprimary" />
             <span className="text-xl font-semibold text-white">PlayWriter GPT</span>
@@ -55,7 +57,7 @@ const Navbar = () => {
           >
             Presented by AiWebTools.Ai
           </a>
-        </a>
+        </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-5">
@@ -143,9 +145,8 @@ const Navbar = () => {
           >
             FAQ
           </a>
-          <a 
-            href="#disclaimer" 
-            className="text-gray-300 py-2 border-b border-vetmuted flex items-center gap-2"
+          <button 
+            className="text-gray-300 py-2 border-b border-vetmuted flex items-center gap-2 text-left"
             onClick={() => {
               setMobileMenuOpen(false);
               scrollToDisclaimer();
@@ -153,12 +154,11 @@ const Navbar = () => {
           >
             <AlertTriangle size={14} />
             Disclaimer
-          </a>
+          </button>
           <Button 
             asChild 
             variant="default"
             className="mt-2 bg-vetprimary hover:bg-vethighlight text-white w-full flex items-center justify-center gap-2"
-            onClick={() => setMobileMenuOpen(false)}
           >
             <a href="https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt" target="_blank" rel="noopener noreferrer">
               <PenSquare className="h-4 w-4 animate-pulse" />

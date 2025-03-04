@@ -4,28 +4,49 @@ import { useState, useEffect } from "react"
 const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null)
+  // Initialize with window size if available (client side), otherwise false for SSR
+  const [isMobile, setIsMobile] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < MOBILE_BREAKPOINT;
+    }
+    return false;
+  });
 
   useEffect(() => {
+    // Skip if SSR
+    if (typeof window === 'undefined') return;
+    
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    }
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    };
     
-    // Check immediately
-    checkMobile()
-    
-    // Use ResizeObserver for better performance
+    // Use ResizeObserver for better performance if available
     if (typeof ResizeObserver !== 'undefined') {
-      const resizeObserver = new ResizeObserver(checkMobile)
-      resizeObserver.observe(document.documentElement)
-      return () => resizeObserver.disconnect()
+      const resizeObserver = new ResizeObserver(() => {
+        // Debounce resize events for better performance
+        if (window.requestAnimationFrame) {
+          window.requestAnimationFrame(checkMobile);
+        } else {
+          setTimeout(checkMobile, 66); // Fallback to approximately 15fps rate limit
+        }
+      });
+      
+      resizeObserver.observe(document.documentElement);
+      return () => resizeObserver.disconnect();
     } else {
       // Fallback for browsers without ResizeObserver
-      window.addEventListener('resize', checkMobile, { passive: true })
-      return () => window.removeEventListener('resize', checkMobile)
+      const handleResize = () => {
+        if (window.requestAnimationFrame) {
+          window.requestAnimationFrame(checkMobile);
+        } else {
+          setTimeout(checkMobile, 66);
+        }
+      };
+      
+      window.addEventListener('resize', handleResize, { passive: true });
+      return () => window.removeEventListener('resize', handleResize);
     }
-  }, [])
+  }, []);
 
-  // Default to false during SSR
-  return isMobile === null ? false : isMobile
+  return isMobile;
 }
