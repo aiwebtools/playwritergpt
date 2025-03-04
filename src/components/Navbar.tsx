@@ -7,6 +7,7 @@ import { PawPrint, Menu, X, Stethoscope, Heart, AlertTriangle } from 'lucide-rea
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,9 +96,22 @@ const Navbar = () => {
               asChild 
               variant="default"
               size="sm"
-              className="bg-vetprimary hover:bg-vethighlight text-white btn-hover-effect glow-on-hover"
+              className={cn(
+                "bg-vetprimary hover:bg-vethighlight text-white btn-hover-effect glow-on-hover transition-transform duration-300",
+                isButtonHovered ? "scale-110 shadow-lg shadow-vetprimary/50" : ""
+              )}
+              onMouseEnter={() => setIsButtonHovered(true)}
+              onMouseLeave={() => setIsButtonHovered(false)}
             >
-              <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
+              <a 
+                href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <PawPrint className={cn("h-4 w-4 mr-1", isButtonHovered ? "animate-bounce" : "")} />
+                Try AI Veterinarian GPT
+              </a>
             </Button>
           </div>
         </div>
@@ -164,10 +178,13 @@ const Navbar = () => {
           <Button 
             asChild 
             variant="default"
-            className="mt-2 bg-vetprimary hover:bg-vethighlight text-white w-full"
+            className="mt-2 bg-vetprimary hover:bg-vethighlight text-white w-full flex items-center justify-center gap-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">Get Started</a>
+            <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer">
+              <PawPrint className="h-4 w-4 animate-pulse" />
+              Try AI Veterinarian GPT
+            </a>
           </Button>
         </div>
       </div>
