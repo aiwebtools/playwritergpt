@@ -7,6 +7,7 @@ import Demo from '@/components/Demo';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import FloatingCTA from '@/components/FloatingCTA';
 
 const Index = () => {
   // Initialize scroll animations when component mounts
@@ -73,6 +74,7 @@ const Index = () => {
         </div>
       </main>
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };
