@@ -67,74 +67,74 @@ const Features = () => {
             <span>Professional Playwriting</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Advanced Features for <span className="text-gradient">Theatrical Excellence</span>
+            <span className="text-gradient">🎬 What Can</span> <span className="text-gradient">Playwriter GPT Do?</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            PlayWriter GPT combines cutting-edge AI with theatrical expertise to help create compelling, production-ready plays.
+            Your ultimate AI playwriting assistant, designed to help you craft professional theatrical plays from creative concept to final script.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
-            icon={<PenSquare className="h-6 w-6 text-vetprimary" />}
-            title="Scene-by-Scene Creation"
-            description="Develop your play one scene at a time with detailed stage directions, dialogue, and character development."
+            icon={<FileText className="h-6 w-6 text-vetprimary" />}
+            title="Generate Complete Plays"
+            description="Create fully written plays with dialogue, stage directions, and vivid descriptions that engage audiences."
             delay={0.1}
           />
           
           <FeatureCard
-            icon={<MessageSquare className="h-6 w-6 text-vetprimary" />}
-            title="Collaborative Process"
-            description="Work closely with AI to refine each element of your play, from plot structure to dialogue nuances."
+            icon={<PenSquare className="h-6 w-6 text-vetprimary" />}
+            title="Create Detailed Outlines"
+            description="Build structured outlines with act titles, scenes, settings, and comprehensive character breakdowns."
             delay={0.2}
+          />
+          
+          <FeatureCard
+            icon={<Theater className="h-6 w-6 text-vetprimary" />}
+            title="Master Any Genre & Style"
+            description="Craft plays in any style from Shakespearean tragedies to modern comedies and experimental theater."
+            delay={0.3}
           />
           
           <FeatureCard
             icon={<Users className="h-6 w-6 text-vetprimary" />}
             title="Character Development"
-            description="Create complex, believable characters with detailed backstories, motivations, and emotional arcs."
-            delay={0.3}
+            description="Create complex, memorable characters with detailed backstories, motivations and emotional depth."
+            delay={0.4}
           />
           
           <FeatureCard
             icon={<Sparkles className="h-6 w-6 text-vetprimary" />}
-            title="Creative Techniques"
-            description="Implement advanced playwriting techniques like cliffhangers, dramatic irony, and compelling narrative arcs."
-            delay={0.4}
+            title="Craft Powerful Themes"
+            description="Integrate moral dilemmas and thought-provoking narratives that leave a lasting impact on audiences."
+            delay={0.5}
+          />
+          
+          <FeatureCard
+            icon={<MessageSquare className="h-6 w-6 text-vetprimary" />}
+            title="Collaborative Creation"
+            description="Get feedback at every step through an interactive process that ensures your vision comes to life."
+            delay={0.6}
           />
           
           <FeatureCard
             icon={<FileText className="h-6 w-6 text-vetprimary" />}
             title="Professional Formatting"
-            description="Receive perfectly formatted theatrical scripts that follow industry standards for production."
-            delay={0.5}
-          />
-          
-          <FeatureCard
-            icon={<Theater className="h-6 w-6 text-vetprimary" />}
-            title="Genre Versatility"
-            description="Create plays across diverse genres from comedy and drama to experimental theater and musicals."
-            delay={0.6}
-          />
-          
-          <FeatureCard
-            icon={<Globe className="h-6 w-6 text-vetprimary" />}
-            title="Research Integration"
-            description="Incorporate historical facts, cultural contexts, and specialized knowledge into your plays."
+            description="Receive perfectly formatted theatrical scripts that follow industry standards for production or submission."
             delay={0.7}
           />
           
           <FeatureCard
-            icon={<BookOpen className="h-6 w-6 text-vetprimary" />}
-            title="Educational Resources"
-            description="Access playwriting techniques, theatrical history, and dramaturgical insights during the creation process."
+            icon={<Clock className="h-6 w-6 text-vetprimary" />}
+            title="Scene-by-Scene Creation"
+            description="Write each scene in its final form with consistent tone, structure, and character arcs throughout."
             delay={0.8}
           />
           
           <FeatureCard
-            icon={<Clock className="h-6 w-6 text-vetprimary" />}
-            title="Efficient Creation"
-            description="Complete full-length plays in a fraction of the time it would take through traditional methods."
+            icon={<BookOpen className="h-6 w-6 text-vetprimary" />}
+            title="Downloadable Scripts"
+            description="Get your complete play as a professional, downloadable DOCX file for easy sharing and submission."
             delay={0.9}
           />
         </div>

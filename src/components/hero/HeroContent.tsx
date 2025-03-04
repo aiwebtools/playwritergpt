@@ -14,11 +14,11 @@ const HeroContent = () => {
           <span>AI-Powered Playwriting Assistant</span>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-          <span className="gradient-text-animated">Award-Winning Plays,</span> <br />
-          <span className="gradient-text-animated" style={{ animationDelay: '1s' }}>Written With You</span>
+          <span className="gradient-text-animated">🎭 Playwriter GPT</span> <br />
+          <span className="gradient-text-animated" style={{ animationDelay: '1s' }}>Write Award-Worthy Plays</span>
         </h1>
         <p className="text-lg md:text-xl text-white font-medium max-w-lg">
-          Your AI-powered playwriting assistant creating professional theatrical scripts with compelling dialogue, rich character development, and engaging narratives.
+          Craft professional, fully structured theatrical plays from start to finish. Whether you have a concept or need inspiration, create original, engaging plays designed to captivate audiences.
         </p>
       </div>
       

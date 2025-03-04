@@ -15,13 +15,13 @@ const HeroDisclaimer = () => {
             🚨 Important Legal Disclaimer
           </h3>
           <p className="text-sm text-gray-200 leading-relaxed mb-4">
-            PetCareGPT/Veterinarian GPT is NOT a licensed veterinarian and does not establish a veterinarian-client-patient relationship (VCPR). This AI tool provides general pet health guidance and should not be used for diagnosis, prescription, or medical treatment.
+            PlayWriter GPT is an AI-powered assistant designed to help create theatrical plays. While it ensures high-quality storytelling, it is not a substitute for professional playwrights, editors, or publishers.
           </p>
           <p className="text-sm text-gray-200 leading-relaxed mb-4">
-            While we strive for accuracy, all advice is for informational purposes only. Users must verify any information before making pet healthcare decisions. For urgent or serious pet health concerns, contact a licensed veterinarian immediately. In emergencies, seek immediate veterinary assistance or visit an animal hospital.
+            All plays are AI-generated but designed to align with user input and creative vision. Users retain full ownership of the scripts created. PlayWriter GPT does not guarantee automatic acceptance in competitions, theaters, or publishing companies.
           </p>
           <p className="text-sm text-gray-200 leading-relaxed mb-4">
-            By using this tool, you acknowledge its limitations and agree to seek professional veterinary care when needed.
+            By using this tool, you acknowledge that PlayWriter GPT is a collaborative writing assistant designed to help structure and refine theatrical scripts.
           </p>
           <div className="flex flex-wrap gap-3 mt-4">
             <Button asChild variant="outline" size="sm" className="border-gray-600 text-gray-300 hover:bg-vetprimary hover:text-white hover:border-vetprimary">

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PenSquare, Upload, MessageSquare, FileText } from 'lucide-react';
+import { PenSquare, FileText, MessageSquare, BookOpen } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Demo = () => {
@@ -41,17 +41,17 @@ const Demo = () => {
         <div className="text-center mb-10 md:mb-16 animate-on-scroll">
           <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetaccent/20 text-white border border-vetaccent/30 mb-4">
             <PenSquare size={16} className="mr-2 text-vetaccent" />
-            <span className="text-vetaccent">Creative Process</span>
+            <span className="text-vetaccent">📜 Playwriting Process</span>
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">
             How <span className="text-gradient">PlayWriter GPT</span> Works
           </h2>
           <p className="text-lg md:text-xl text-indigo-200 max-w-2xl mx-auto">
-            Create award-winning theatrical plays in three simple steps.
+            Create award-worthy theatrical plays in four simple steps.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 md:p-6 shadow-glass border border-white/10 text-center relative animate-on-scroll touch-active" style={{ animationDelay: '0.1s' }}>
             <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-vetaccent flex items-center justify-center text-white font-bold">
               1
@@ -59,9 +59,9 @@ const Demo = () => {
             <div className="h-14 md:h-16 flex items-center justify-center mb-3 md:mb-4">
               <MessageSquare className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Share Your Vision</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Define Your Vision</h3>
             <p className="text-sm md:text-base text-indigo-200">
-              Tell us about your play idea or let us inspire you with creative suggestions.
+              Share your play's genre, premise, characters, and setting details or get inspired with creative suggestions.
             </p>
           </div>
           
@@ -70,11 +70,11 @@ const Demo = () => {
               2
             </div>
             <div className="h-14 md:h-16 flex items-center justify-center mb-3 md:mb-4">
-              <PenSquare className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
+              <BookOpen className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Collaborative Creation</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Build Structured Outline</h3>
             <p className="text-sm md:text-base text-indigo-200">
-              Review scenes, suggest changes, and watch your play develop scene by scene.
+              Get a detailed outline with acts, scenes, character descriptions, and key story progression elements.
             </p>
           </div>
           
@@ -83,11 +83,24 @@ const Demo = () => {
               3
             </div>
             <div className="h-14 md:h-16 flex items-center justify-center mb-3 md:mb-4">
+              <PenSquare className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
+            </div>
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Scene-by-Scene Creation</h3>
+            <p className="text-sm md:text-base text-indigo-200">
+              Each scene is written separately with dialogue, stage directions, and descriptions in professional format.
+            </p>
+          </div>
+          
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 md:p-6 shadow-glass border border-white/10 text-center relative animate-on-scroll touch-active" style={{ animationDelay: '0.4s' }}>
+            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-vetaccent flex items-center justify-center text-white font-bold">
+              4
+            </div>
+            <div className="h-14 md:h-16 flex items-center justify-center mb-3 md:mb-4">
               <FileText className="h-8 w-8 md:h-10 md:w-10 text-vetaccent" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Polished Final Script</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Complete Script Download</h3>
             <p className="text-sm md:text-base text-indigo-200">
-              Receive a professional theatrical script complete with dialogue, stage directions, and acts.
+              Receive your finalized play as a professionally formatted downloadable DOCX file ready for production.
             </p>
           </div>
         </div>

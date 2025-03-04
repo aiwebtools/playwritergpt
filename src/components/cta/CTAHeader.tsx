@@ -7,7 +7,7 @@ const CTAHeader = () => {
     <>
       <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vetmuted text-vetprimary mb-6">
         <PenSquare size={16} className="mr-2" />
-        <span>Start Creating</span>
+        <span>✨ Let's Write A Play, Shall We?</span>
       </div>
       
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
