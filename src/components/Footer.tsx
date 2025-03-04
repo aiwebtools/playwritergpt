@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PawPrint, Heart, Mail, Phone, Instagram } from 'lucide-react';
+import { PawPrint, Heart, Mail, Phone, Instagram, Shield, AlertTriangle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Custom TikTok icon component
@@ -61,8 +61,14 @@ const Footer = () => {
               </div>
             </a>
             <p className="text-gray-400 mb-4">
-              Advanced AI veterinary assistance for all your pet health needs.
+              AI-powered virtual veterinary assistance providing general pet health information only. Not a substitute for professional veterinary care.
             </p>
+            <div className="flex items-center gap-2 mb-4">
+              <AlertTriangle size={14} className="text-yellow-500" />
+              <span className="text-xs text-gray-400">
+                Does not establish a veterinarian-client-patient relationship (VCPR)
+              </span>
+            </div>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-vetprimary transition-colors">
                 <Instagram className="h-6 w-6" />
@@ -74,11 +80,21 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal Information</h3>
             <ul className="space-y-3">
               <li><a href="https://aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">About Us</a></li>
               <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Privacy Policy</a></li>
               <li><a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetprimary hover-scale inline-block">Terms of Service</a></li>
+              <li><Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
+                  onClick={scrollToDisclaimer}
+                >
+                  <AlertTriangle size={12} className="mr-2 text-yellow-500" />
+                  LEGAL DISCLAIMER
+                </Button>
+              </li>
               <li>
                 <span className="text-gray-400 font-semibold">Contact:</span>
                 <div className="ml-2 mt-1 space-y-2">
@@ -123,19 +139,23 @@ const Footer = () => {
                   variant="outline" 
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
-                  onClick={scrollToDisclaimer}
+                  onClick={scrollToFaq}
                 >
-                  DISCLAIMER
+                  <FileText size={12} className="mr-2" />
+                  FAQ
                 </Button>
               </li>
               <li>
                 <Button 
+                  asChild
                   variant="outline" 
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
-                  onClick={scrollToFaq}
                 >
-                  FAQ
+                  <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer">
+                    <Shield size={12} className="mr-2" />
+                    TERMS OF SERVICE
+                  </a>
                 </Button>
               </li>
             </ul>
@@ -155,16 +175,9 @@ const Footer = () => {
             </a>
             . All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-4 mt-4 md:mt-0 justify-center">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="text-gray-300 border-gray-700 hover:bg-vetprimary hover:text-white"
-              onClick={() => window.open('https://aiwebtools.ai/terms-of-services', '_blank')}
-            >
-              Terms of Service
-            </Button>
-          </div>
+          <p className="text-gray-500 text-xs mt-2 md:mt-0">
+            PetCareGPT is for informational purposes only. Not a substitute for professional veterinary care.
+          </p>
         </div>
       </div>
     </footer>
