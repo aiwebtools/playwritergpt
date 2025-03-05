@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Theater, Heart, Mail, Phone, Instagram, Shield, AlertTriangle, FileText } from 'lucide-react';
+import { Theater, Heart, Mail, Phone, Instagram, Shield, AlertTriangle, FileText, Edit } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Custom TikTok icon component
@@ -132,6 +131,19 @@ const Footer = () => {
                   onClick={() => window.open('https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt', '_blank')}
                 >
                   TRY PLAYWRITER GPT
+                </Button>
+              </li>
+              <li>
+                <Button 
+                  asChild
+                  variant="outline" 
+                  size="sm" 
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
+                >
+                  <a href="https://screenplaywritergpt.lovable.app/" target="_blank" rel="noopener noreferrer">
+                    <Edit size={12} className="mr-2" />
+                    MORE WRITING TOOLS
+                  </a>
                 </Button>
               </li>
               <li>
