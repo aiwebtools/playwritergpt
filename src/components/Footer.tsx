@@ -118,16 +118,6 @@ const Footer = () => {
                   variant="outline" 
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
-                  onClick={() => window.open('https://aiwebtools.ai', '_blank')}
-                >
-                  MORE AI TOOLS
-                </Button>
-              </li>
-              <li>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
                   onClick={() => window.open('https://chatgpt.com/g/g-aWwfdYrHh-playwriter-gpt', '_blank')}
                 >
                   TRY PLAYWRITER GPT
@@ -168,6 +158,16 @@ const Footer = () => {
                     <Shield size={12} className="mr-2" />
                     TERMS OF SERVICE
                   </a>
+                </Button>
+              </li>
+              <li>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
+                  onClick={() => window.open('https://aiwebtools.ai', '_blank')}
+                >
+                  MORE AI TOOLS
                 </Button>
               </li>
             </ul>
