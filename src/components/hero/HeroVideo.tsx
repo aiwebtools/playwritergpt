@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Theater, ExternalLink, Heart, Camera } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -6,8 +7,12 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const HeroVideo = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const isMobile = useIsMobile();
+  const [videoInitialized, setVideoInitialized] = useState(false);
   
   useEffect(() => {
+    // Only initialize the video once
+    if (videoInitialized) return;
+    
     const attemptAutoplay = () => {
       try {
         if (iframeRef.current) {
@@ -27,7 +32,8 @@ const HeroVideo = () => {
           
           const cleanUrl = `${baseUrl}?${params.toString()}`;
           iframeRef.current.src = cleanUrl;
-          console.log('Attempting to autoplay video with clean URL:', cleanUrl);
+          console.log('Initializing video with URL:', cleanUrl);
+          setVideoInitialized(true);
         }
       } catch (error) {
         console.error('Error attempting to autoplay:', error);
@@ -38,19 +44,27 @@ const HeroVideo = () => {
     
     const timer = setTimeout(attemptAutoplay, 1000);
     
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible' && iframeRef.current) {
-        attemptAutoplay();
-      }
-    };
-    
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    
     return () => {
       clearTimeout(timer);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, []);
+  }, [videoInitialized]);
+
+  // Don't re-initialize on visibility change, only handle initial load
+  useEffect(() => {
+    if (!videoInitialized) {
+      const handleVisibilityChange = () => {
+        if (document.visibilityState === 'visible' && !videoInitialized) {
+          setVideoInitialized(false); // Reset to try again
+        }
+      };
+      
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+      
+      return () => {
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+      };
+    }
+  }, [videoInitialized]);
 
   return (
     <div className="relative animate-on-scroll video-container" style={{ animationDelay: '0.3s' }}>

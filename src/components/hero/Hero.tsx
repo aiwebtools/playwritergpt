@@ -14,6 +14,11 @@ const Hero = () => {
     // Use a more reliable way to check if elements are in the viewport
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
+        // Skip video container to prevent reloading
+        if (entry.target.classList.contains('video-container')) {
+          return;
+        }
+        
         if (entry.isIntersecting) {
           // Add visible class with a slight delay to ensure DOM is ready
           setTimeout(() => {
@@ -27,10 +32,22 @@ const Hero = () => {
     });
     
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => observer.observe(el));
+    animatedElements.forEach(el => {
+      // Don't observe video container
+      if (!el.classList.contains('video-container')) {
+        observer.observe(el);
+      } else {
+        // Just add visible class to video container without observing
+        el.classList.add('visible');
+      }
+    });
     
     return () => {
-      animatedElements.forEach(el => observer.unobserve(el));
+      animatedElements.forEach(el => {
+        if (!el.classList.contains('video-container')) {
+          observer.unobserve(el);
+        }
+      });
     };
   }, [isMobile]);
 

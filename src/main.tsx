@@ -1,4 +1,3 @@
-
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { createRoot } from 'react-dom/client'
@@ -34,17 +33,27 @@ if (isMobileBrowser()) {
 
 // Enhanced video autoplay support - mobile-optimized
 const setupVideoAutoplay = () => {
+  // Keep track of enhanced iframes
+  const enhancedIframes = new Set();
+  
   // Function to enhance YouTube iframes for autoplay
   const enhanceYouTubeVideos = () => {
     const iframes = document.querySelectorAll('iframe[src*="youtube.com"]');
     iframes.forEach(iframe => {
       const iframeElement = iframe as HTMLIFrameElement;
+      
+      // Skip if we've already enhanced this iframe
+      if (enhancedIframes.has(iframeElement)) {
+        return;
+      }
+      
       let src = iframeElement.src;
       
       try {
         // Skip if the URL is already processed or too complex
         if (src.includes('autoplay=1') && src.length > 300) {
           console.log('Skipping already enhanced YouTube iframe');
+          enhancedIframes.add(iframeElement);
           return;
         }
         
@@ -81,6 +90,7 @@ const setupVideoAutoplay = () => {
         iframeElement.src = cleanUrl;
         
         console.log('Enhanced YouTube iframe for autoplay:', cleanUrl);
+        enhancedIframes.add(iframeElement);
       } catch (error) {
         console.error('Error enhancing YouTube iframe:', error);
       }
@@ -90,16 +100,20 @@ const setupVideoAutoplay = () => {
   // Initial enhancement with a slight delay to ensure DOM is ready
   setTimeout(enhanceYouTubeVideos, 1000);
   
-  // Re-enhance videos when visibility changes
+  // Re-enhance videos when visibility changes, but not on scroll
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
+      // Only enhance videos that haven't been enhanced yet
       enhanceYouTubeVideos();
     }
   });
   
   // Handle page resize (e.g., orientation change on mobile)
   window.addEventListener('resize', () => {
-    setTimeout(enhanceYouTubeVideos, 500);
+    setTimeout(() => {
+      // Only enhance videos that haven't been enhanced yet
+      enhanceYouTubeVideos();
+    }, 500);
   }, { passive: true });
 };
 
