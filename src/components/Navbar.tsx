@@ -71,6 +71,14 @@ const Navbar = () => {
             <a href="#faq" className="text-gray-300 hover:text-vetprimary transition-colors text-sm">
               FAQ
             </a>
+            <a 
+              href="https://stagemasterai.lovable.app/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-300 hover:text-vetprimary transition-colors text-sm"
+            >
+              StageMaster Suite
+            </a>
             <Button 
               variant="ghost"
               className="text-gray-300 hover:text-vetprimary hover:bg-transparent transition-colors flex items-center gap-1 text-xs p-0"
@@ -144,6 +152,15 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
           >
             FAQ
+          </a>
+          <a 
+            href="https://stagemasterai.lovable.app/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-gray-300 py-2 border-b border-vetmuted"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            StageMaster Suite
           </a>
           <button 
             className="text-gray-300 py-2 border-b border-vetmuted flex items-center gap-2 text-left"

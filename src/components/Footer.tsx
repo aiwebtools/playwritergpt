@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Theater, Heart, Mail, Phone, Instagram, Shield, AlertTriangle, FileText, Edit } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -157,6 +158,19 @@ const Footer = () => {
                   <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer">
                     <Shield size={12} className="mr-2" />
                     TERMS OF SERVICE
+                  </a>
+                </Button>
+              </li>
+              <li>
+                <Button 
+                  asChild
+                  variant="outline" 
+                  size="sm" 
+                  className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
+                >
+                  <a href="https://stagemasterai.lovable.app/" target="_blank" rel="noopener noreferrer">
+                    <Theater size={12} className="mr-2" />
+                    STAGEMASTER AI SUITE
                   </a>
                 </Button>
               </li>

@@ -5,6 +5,7 @@ import HeroContent from './HeroContent';
 import HeroVideo from './HeroVideo';
 import HeroDisclaimer from './HeroDisclaimer';
 import { useIsMobile } from '@/hooks/use-mobile';
+import StageMasterCard from '../cta/StageMasterCard';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -99,6 +100,11 @@ const Hero = () => {
           
           {/* Hero Visual - YouTube Video Integration */}
           <HeroVideo />
+        </div>
+        
+        {/* StageMaster AI Suite Card */}
+        <div className="mt-12 mb-6">
+          <StageMasterCard />
         </div>
         
         {/* Disclaimer Section */}
