@@ -44,6 +44,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-vetchardark">
+      {/* SEO Content - Hidden but accessible to search engines */}
+      <div className="sr-only">
+        <h1>PlayWriter GPT - Free AI Playwriting Tool by AiWebTools.AI</h1>
+        <p>Create professional theatrical plays with our free AI playwriting assistant. Generate scripts, develop characters, and craft engaging dialogue with the power of artificial intelligence. Part of AiWebTools.AI's comprehensive suite of free AI tools for creative professionals.</p>
+        <h2>Free AI Tools for Writers and Creative Professionals</h2>
+        <p>AiWebTools.AI offers the best free AI tools including PlayWriter GPT for playwriting, script generation, character development, and theatrical writing assistance. Our AI web tools help writers, directors, and creative professionals create award-winning content.</p>
+        <h3>AI Web Tools - Professional Creative Suite</h3>
+        <p>Discover our complete collection of AI tools: Theater Set Design GPT, Costume Design GPT, Choreography GPT, Stage Lighting GPT, PlayWriter GPT, and Movie Script Writer GPT. All tools are free and designed for professional use.</p>
+      </div>
+
       <Navbar />
       <DisclaimerPopup />
       <main>
