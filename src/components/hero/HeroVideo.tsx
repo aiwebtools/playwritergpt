@@ -16,7 +16,7 @@ const HeroVideo = () => {
     const attemptAutoplay = () => {
       try {
         if (iframeRef.current) {
-          const baseUrl = "https://www.youtube.com/embed/KKldzg40wEI";
+          const baseUrl = "https://www.youtube.com/embed/_QQ-oYYSFlw";
           const params = new URLSearchParams({
             autoplay: "1",
             mute: "0",
@@ -26,7 +26,7 @@ const HeroVideo = () => {
             enablejsapi: "1",
             hd: "1",
             vq: "hd1080",
-            playlist: "KKldzg40wEI",
+            playlist: "_QQ-oYYSFlw",
             loop: "1"
           });
           
@@ -72,7 +72,7 @@ const HeroVideo = () => {
         <iframe 
           ref={iframeRef}
           className="w-full h-full"
-          src="https://www.youtube.com/embed/KKldzg40wEI?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080&playlist=KKldzg40wEI&loop=1"
+          src="https://www.youtube.com/embed/_QQ-oYYSFlw?autoplay=1&mute=0&controls=1&rel=0&showinfo=0&enablejsapi=1&hd=1&vq=hd1080&playlist=_QQ-oYYSFlw&loop=1"
           title="Playwriter GPT Demo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
