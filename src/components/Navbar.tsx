@@ -128,7 +128,7 @@ const Navbar = () => {
       <div
         className={cn(
           'fixed inset-x-0 top-[68px] z-40 bg-vetdark/95 backdrop-blur-md shadow-md transition-all duration-300 ease-in-out md:hidden',
-          mobileMenuOpen ? 'max-h-screen py-4' : 'max-h-0 overflow-hidden py-0'
+          mobileMenuOpen ? 'max-h-[80vh] py-4 overflow-y-auto' : 'max-h-0 overflow-hidden py-0'
         )}
       >
         <div className="flex flex-col space-y-3 px-6">

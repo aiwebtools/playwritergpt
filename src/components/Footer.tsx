@@ -21,6 +21,8 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const AIWEBTOOLS_URL = "https://aiwebtools.lovable.app/?via=aiwebtools";
+
 const Footer = () => {
   const scrollToDisclaimer = () => {
     const disclaimerElement = document.getElementById('disclaimer');
@@ -48,7 +50,7 @@ const Footer = () => {
               </div>
               <div className="ml-9">
                 <a 
-                  href="https://aiwebtools.ai" 
+                  href={AIWEBTOOLS_URL}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-xs text-gray-400 block hover:text-vetaccent transition-colors"
@@ -82,9 +84,9 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal Information</h3>
             <ul className="space-y-3">
-              <li><a href="https://aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">About Us</a></li>
+              <li><a href={AIWEBTOOLS_URL} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">About Us</a></li>
               <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">Privacy Policy</a></li>
-              <li><a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">Terms of Service</a></li>
+              <li><a href={AIWEBTOOLS_URL} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-vetaccent hover-scale inline-block">Terms of Service</a></li>
               <li><Button 
                   variant="outline" 
                   size="sm" 
@@ -155,7 +157,7 @@ const Footer = () => {
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
                 >
-                  <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer">
+                  <a href={AIWEBTOOLS_URL} target="_blank" rel="noopener noreferrer">
                     <Shield size={12} className="mr-2" />
                     TERMS OF SERVICE
                   </a>
@@ -179,7 +181,7 @@ const Footer = () => {
                   variant="outline" 
                   size="sm" 
                   className="text-gray-300 border-gray-700 hover:bg-vetaccent hover:text-white"
-                  onClick={() => window.open('https://aiwebtools.ai', '_blank')}
+                  onClick={() => window.open(AIWEBTOOLS_URL, '_blank')}
                 >
                   MORE AI TOOLS
                 </Button>
@@ -190,9 +192,9 @@ const Footer = () => {
         
         <div className="pt-8 mt-8 border-t border-vetmuted flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} {" "}
+            © {new Date().getFullYear()}{" "}
             <a 
-              href="https://aiwebtools.ai" 
+              href={AIWEBTOOLS_URL}
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-500 hover:text-vetaccent transition-colors"
